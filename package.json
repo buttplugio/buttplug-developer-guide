@@ -1,0 +1,23 @@
+{
+  "name": "buttplug-developer-guide",
+  "version": "0.1.0",
+  "description": "Buttplug Developer Guide",
+  "scripts": {
+    "build": "gitbook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metafetish/buttplug-developer-guide.git"
+  },
+  "author": "Kyle Machulis <kyle@machul.is>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/metafetish/buttplug-developer-guide"
+  },
+  "homepage": "https://github.com/metafetish/buttplug-developer-guide",
+  "devDependencies": {
+    "gitbook": "^3.2.3",
+    "gitbook-cli": "^2.3.2",
+    "yarn": "^1.2.1"
+  }
+}
