@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Buttplug Developer Guide",
   "scripts": {
-    "build": "gitbook build"
+    "install": "gitbook install",
+    "build": "gitbook build",
+    "all": "gitbook install && gitbook build"
   },
   "repository": {
     "type": "git",
