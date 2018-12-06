@@ -10,7 +10,15 @@
     - [About This Guide](introduction.md#about-this-guide)
     - [Terms Used In The Guide](introduction.md#terms-used-in-this-guide)
     - [What To Read](introduction.md#what-to-read)
-    
+- [Sticking Buttplug In Your Application](writing-buttplug-applications.md)
+    - [Buttplug Session Overview](writing-buttplug-applications.md#buttplug-session-overview)
+    - [Dealing With Errors](writing-buttplug-applications.md#dealing-with-errors)
+    - [Choosing a Connector](writing-buttplug-applications.md#choosing-a-connector)
+    - [Connecting](writing-buttplug-applications.md#connecting)
+    - [Device Enumeration](writing-buttplug-applications.md#device-enumeration)
+    - [Device Control](writing-buttplug-applications.md#device-control)
+    - [Logging](writing-buttplug-applications.md#logging)
+    - [Putting It All Together](writing-buttplug-applications.md#putting-it-all-together)
 <!-- New TOC? -->
 <!-- - [Sticking Buttplug In Your Application](writing-buttplug-applications.md) -->
 <!-- - [Sticking New Devices In Buttplug](new-devices.md) -->
