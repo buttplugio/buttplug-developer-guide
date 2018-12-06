@@ -73,6 +73,8 @@ Here's a quick set of terms and definitions to be familiar with before continuin
     * The part of Buttplug implementations that applications use in order to access servers. Client APIs are what most Buttplug applications developers will see.
 * **Message**
     * Buttplug messages are defined in the [Buttplug Spec](https://buttplug-spec.docs.buttplug.io), and are how Buttplug Clients and Servers communicate with each other.
+* **Connector**
+    * A piece of software that sits on top of a client/server so it can talk to the corresponding pieces in some way. This could be embedded (other side in same program) via networks (i.e websockets), ipc (i.e pipes), or other mechanisms.
 
 ## What to Read
 
