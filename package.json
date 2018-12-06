@@ -19,9 +19,8 @@
   "homepage": "https://github.com/metafetish/buttplug-developer-guide",
   "devDependencies": {
     "gitbook": "^3.2.3",
+    "gitbook-plugin-codegroup": "git+https://github.com/qdot/gitbook-plugin-codegroup",
+    "gitbook-plugin-piwik": "^0.2.1",
     "gitbook-cli": "^2.3.2"
-  },
-  "dependencies": {
-    "gitbook-plugin-piwik": "^0.2.1"
   }
 }
