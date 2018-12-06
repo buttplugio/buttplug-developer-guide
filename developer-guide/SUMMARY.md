@@ -5,10 +5,11 @@
     - [C'est n'est pas une Buttplug](foreword.md#cest-nest-pas-une-buttplug)
     - [Why Do I Need You To Tell Me Where My Butt Is](foreword.md#why-do-i-need-you-to-tell-me-where-my-butt-is)
 - [Introduction](introduction.md)
-    - [What Even Is Buttplug?](introduction.md#what-is-buttplug)
-    - [So Does It Just Control Buttplugs Or...?](introduction.md#so-does-it-just-control-buttplugs-or)
+    - [What Even Is Buttplug?](introduction.md#what-even-is-buttplug)
+    - [So Does It Just Control Buttplugs Or...?](introduction.md#so-does-it-just-control-buttplugs)
     - [About This Guide](introduction.md#about-this-guide)
     - [Terms Used In The Guide](introduction.md#terms-used-in-this-guide)
+    - [What To Read](introduction.md#what-to-read)
     
 <!-- New TOC? -->
 <!-- - [Sticking Buttplug In Your Application](writing-buttplug-applications.md) -->

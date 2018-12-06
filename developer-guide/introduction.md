@@ -63,9 +63,34 @@ The guide tries to cover examples for all reference implementations, where possi
 
 ## Terms To Be Familiar With
 
-Here's a quick set of terms and definitions to be familiar with before continuing. These will be used and probalby re-explained throughout the document, but having them all here means no one has to go looking for them.
+Here's a quick set of terms and definitions to be familiar with before continuing. These will be used and probably re-explained throughout the document, but having them all here means no one has to go looking for them.
 
-* **Client**
 * **Device**
+    * A device is the general term for anything that buttplug connects to and controls. Sex toys, gamepads, estim units, fucking machines, whatever.
+* **Server** 
+    * The part of Buttplug implementations that manages device connections and communication. This may be a standalone server, or may exist inside an application that uses Buttplug. Those wanting to add implementations for new devices will do so in Buttplug Server code.
+* **Client**
+    * The part of Buttplug implementations that applications use in order to access servers. Client APIs are what most Buttplug applications developers will see.
 * **Message**
-* **Server**
+    * Buttplug messages are defined in the [Buttplug Spec](https://buttplug-spec.docs.buttplug.io), and are how Buttplug Clients and Servers communicate with each other.
+
+## What to Read
+
+Obviously, reading the whole guide is best. A lot of work was put into writing this, and the best way to appreciate that work is the read and savor every single word.
+
+However, based on feedback, apparently readers have "other things to
+do". With that severe disrespect in mind, here's a list of what you'll
+learn from each of the sections in this guide.
+
+* **Buttplug Ethics**
+    * Summary of just a few of the myriad ethics issues encountered when writing sex software. A good way to find out what you may be responsible for if you decide to work with the library. Everyone should read this one.
+* **Sticking Buttplug In Your Application**
+    * All about the Client side of Buttplug. Useful for those wanting to build applications using prebuilt servers. If you just want to build a game, movie player, control app, or whatever, this is the chapter for you.
+* **Sticking New Messages and Devices In Buttplug**
+    * If you've built a new device, or have a device the reference libraries don't yet support, this is where you'll find out how to add it to Buttplug libraries. This chapter will also detail what to do if you need a new message added to the protocol to support your device.
+* **Strategies Against Buttplug Architecture**
+    * Outlines the design of the reference libraries. Why things like Connectors and Device Managers and Message Sorters exist. Check this out if you want to get into Core Buttplug development, or are curious about what some of our bugs/issues are about.
+* **The Message Menagerie**
+    * Design reasoning behind messages in the low-level Buttplug protocol. Good for Server/Core Buttplug development knowledge.
+* **Buttplug Cookbook**
+    * Common design patterns and strategies for using Buttplug. If you want to know how the Core Buttplug Engineers do things with the library, or learn from the experience of other projects using the system, this is the place to look. Everything from command conversions to pattern building to whatever else looks an oft-repeated good idea that should be documented.
