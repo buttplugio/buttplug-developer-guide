@@ -41,7 +41,7 @@ Errors in live Buttplug sessions come in the following flavors.
 The above types only apply to clients that have connected to a server. Custom exceptions or errors may also be thrown by library implementations of Buttplug. For instance, a Connector may throw a custom error or exception based on the type of transport it is using. For more information, see the documentation of the specific Buttplug implementation you are using. 
 
 {% codegroup %}
-```csharp::C#::./developer-guide/ping.cs
+```csharp::C#::./examples/csharp/ExceptionExample/Program.cs
 {% include "" %}
 ```
 ```js
