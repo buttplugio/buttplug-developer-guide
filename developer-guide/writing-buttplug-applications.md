@@ -6,7 +6,7 @@ In this section, we'll go over everything needed to integrate the Buttplug libra
 
 ## Buttplug Session Overview
 
-While there is some [coverage of the lifetime of a buttplug session](https://buttplug-spec.docs.buttplug.io/architecture.html#Example_lifecycle) in the Buttplug Spec, this mostly refers to the expected order of low level messages in the protocol. As a user of one of the Client APIs, interaction with raw messages should be kept to a minimum, so we'll cover this here at a the higher API level.
+While there is some [coverage of the lifetime of a buttplug session](https://buttplug-spec.docs.buttplug.io/architecture.html#Example_lifecycle) in the Buttplug Spec, this mostly refers to the expected order of low level messages in the protocol. As a user of one of the Client APIs, interaction with raw messages should be kept to a minimum, so we'll cover session lifetime here at the API level.
 
 Buttplug sessions, as established through reference library APIs, generally consist of the following steps. These steps are stated from the perspective of the Client API.
 
@@ -21,7 +21,7 @@ This covers most of the functionality that Buttplug provides. Within these steps
 
 ## Dealing With Errors
 
-As with most technology, things in Buttplug can and will often go wrong. As stated in the ethics section, due to the context of Buttplug, the user may be having sex with/via an application when things to wrong. This means things can go very, very wrong. 
+As with all technology, things in Buttplug can and often will go wrong. As stated in the ethics section, due to the context of Buttplug, the user may be having sex with/via an application when things go wrong. This means things can go very, very wrong. 
 
 With that in mind, errors are covered before anything else.
 
@@ -52,12 +52,15 @@ The above types only apply to clients that have connected to a server. Custom ex
 ```
 {% endcodegroup %}
 
-
-## Client and Server Compatibility
+**NOTE:** You may notice that there's no way to tell exactly what an error is from this message. You get a class, but the information itself is encoded in the message, which is not standardized. Therefore it's impossible to tell whether a device disconnected, or you just send a connected device an incorrect message. This is bad, and [will hopefully be fixed at some point in the future](https://github.com/buttplugio/buttplug/issues/70).
 
 ## Choosing a Connector
 
+The first thing to do when writing a Buttplug application is figuring out where the server is going to live.
+
 ## Connecting
+
+### The Handshake Client and Server Compatibility
 
 ## Device Enumeration
 
