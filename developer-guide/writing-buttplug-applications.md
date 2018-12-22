@@ -58,6 +58,17 @@ The above types only apply to clients that have connected to a server. Custom ex
 
 The first thing to do when writing a Buttplug application is figuring out where the server is going to live.
 
+- **Inside the Application**
+  - You'll bundle a buttplug server with your application. Easier to distribute and create UI for, but also means if the Buttplug libraries change or upgrade, you may need to do the same. This can also tie your application to a single platform (which may or may not be an issue), if you redistribute libraries that only run on a single platform.
+- **Outside the Application**
+  - You'll allow the user to connect to a Buttplug server they're running on their system, outside of your application. This usually means you'll connect via some IPC method, like pipes or websockets. Buttplug Client Connector libraries usually implement the system specific transports for you, so it's just a matter of presenting the user with a UI that lets them connect as they need.
+- **Both!**
+  - Bundling a server with your application *and* allowing users to connect to an outside server is also an option, albeit a complicated one. Buttplug reference implementation libraries are usually distributed with Client and Server capabilities, so you can embed a server if that's simple for you, and allow the user to connect out if you don't feel like upgrading later. This may require more in-depth UI work to let the user know what's going on, though.
+
+### Embedded Servers
+
+### External Servers
+
 ## Connecting
 
 ### The Handshake Client and Server Compatibility
