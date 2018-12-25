@@ -1,4 +1,4 @@
-## Choosing a Connector
+# Choosing a Connector
 
 The first thing to do when writing a Buttplug application is figuring out where the server is going to live.
 
@@ -9,7 +9,7 @@ The first thing to do when writing a Buttplug application is figuring out where 
 - **Both!**
   - Bundling a server with your application *and* allowing users to connect to an outside server is also an option, albeit a complicated one. Buttplug reference implementation libraries are usually distributed with Client and Server capabilities, so you can embed a server if that's simple for you, and allow the user to connect out if you don't feel like upgrading later. This may require more in-depth UI work to let the user know what's going on, though.
 
-### Embedded Servers and Connectors
+## Embedded Servers and Connectors
 
 An Embedded server means both the client and server are part of the application are you building. While doing this ends up being more convenient for the user in some ways, as they have less setup to do and choices to make, there are a few drawbacks, including:
 
@@ -25,28 +25,27 @@ This process is outlined in the code example below.
 
 {% codegroup %}
 ```csharp::C#::./examples/csharp/ExceptionExample/Program.cs
-test
 ```
 ```js
-test
+embedded example here
 ```
 ```twine
-test
+embedded example here
 ```
 {% endcodegroup %}
 
-### External Servers and Connectors
+## External Servers and Connectors
 
 For using external servers, such as Websocket or IPC Servers, the process is much simpler. You'll need to provide the user a way to pass in the server address, then you just create the connector object using that address. Since you don't have access to the actual server object, you can assume all Device Manager setup is done by the server itself.
 
 {% codegroup %}
 ```csharp
-test
+external example here
 ```
 ```js
-test
+external example here
 ```
 ```twine
-test
+external example here
 ```
 {% endcodegroup %}

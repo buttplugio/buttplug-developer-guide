@@ -1,4 +1,4 @@
-## Connecting
+# Connecting
 
 Once you've created a connector, it's time to connect to a server!
 
@@ -7,7 +7,19 @@ As all connector setup was done via the Connector setup, this is now just down t
 - For embedded connectors in the reference implementation, connection will always succeed, as long as the client and server are from the same library version. Hopefully, that is a situation that will rarely if ever happen.
 - For external connectors, connections can fail due to usual connection issues (wrong address, server not up, network not on, etc...). There is also a chance that the client and server could have a version mismatch. We'll cover this in the next section.
 
-### Client/Server Compatibility
+{% codegroup %}
+```csharp
+basic connect here
+```
+```js
+basic connect here
+```
+```twine
+basic connect here
+```
+{% endcodegroup %}
+
+## Client/Server Compatibility
 
 To keep up with new hardware capabilities and the needs of users, the Buttplug protocol spec is versioned. Any time any message changes, the version number of the spec is incremented by 1. When the Connect function is called from a reference client, a "handshake" process occurs where the Client and Server trade their spec version with each other.
 
@@ -15,7 +27,7 @@ Maintaining backward compatibility with applications that may be abandoned (some
 
 If a client is running a newer version of the spec than the server, a connection error will be thrown, because otherwise the client can send messages that the server doesn't know what to do with. In this case, it is assumed that there will be a new version of the server library or software available that the client can upgrade to.
 
-### Buttplug Ping
+## Buttplug Ping
 
 The other session property negotiated on handshake is "Ping". Ping is a protocol negotiated keep-alive, with the server dictating the expected ping time to the client. A ping time of 0 denotes "no ping expected", while any number above that is the expected maximum amount of time in milliseconds between pings.
 
@@ -25,7 +37,21 @@ Keeping in line with the knowledge that reference, and most likely, all implemen
 
 In reference library implementations of the Client, ping negotiation is handled opaquely by the client API. It is assumed that if the client's event loop fails to send a ping, the program has most likely locked up or crashed, and therefore everything should be shut down. Therefore, no code samples are provided for this. It should *just work*.
 
-### What to Expect on Successful Connect
+On ping failure in the client APIs, you should either receive some sort of event or callback denoting the error. The event or callback arguments will contain an error with an error class type of ERROR_PING. Any subsequent calls to server commands (device search/commands, etc) will fail from this point on.
+
+{% codegroup %}
+```csharp
+ping example here
+```
+```js
+ping example here
+```
+```twine
+ping example here
+```
+{% endcodegroup %}
+
+## What to Expect on Successful Connect
 
 On successful connect, any devices that were already connected to the server will be sent to the client as "DeviceAdded" messages. More information on how DeviceAdded message and events work is provided in the Device Enumeration section of this chapter, but for now, it's just worth knowing that you may get notified about this. We'll cover how to deal with it later.
 
