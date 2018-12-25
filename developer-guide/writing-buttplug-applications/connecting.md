@@ -17,6 +17,14 @@ If a client is running a newer version of the spec than the server, a connection
 
 ### Buttplug Ping
 
+The other session property negotiated on handshake is "Ping". Ping is a protocol negotiated keep-alive, with the server dictating the expected ping time to the client. A ping time of 0 denotes "no ping expected", while any number above that is the expected maximum amount of time in milliseconds between pings.
+
+Ping exists to try ensuring some basic level of safety for usage if a client application locks up, remote connection is interrupted, or other horrible scenarios occur that stop ping messages from being transmitted. If a client does not send a ping message within the alloted time, the server is expected to disconnect and stop all devices that are currently active. 
+
+Keeping in line with the knowledge that reference, and most likely, all implementations of Buttplug are neither real-time constrained nor safety-guaranteed, the Ping system is more of a vaguely hopeful mitigation than a secure requirement. Your milage may vary. Don't die.
+
+In reference library implementations of the Client, ping negotiation is handled opaquely by the client API. It is assumed that if the client's event loop fails to send a ping, the program has most likely locked up or crashed, and therefore everything should be shut down. Therefore, no code samples are provided for this. It should *just work*.
+
 ### What to Expect on Successful Connect
 
 On successful connect, any devices that were already connected to the server will be sent to the client as "DeviceAdded" messages. More information on how DeviceAdded message and events work is provided in the Device Enumeration section of this chapter, but for now, it's just worth knowing that you may get notified about this. We'll cover how to deal with it later.
