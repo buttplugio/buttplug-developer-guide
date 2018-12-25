@@ -1,3 +1,33 @@
+# API Basics
+
+Most of the Client Reference Implementations are built to look as similar as possible. However, there may be instances where language options (i.e. existence of things like first-class events) change the API slightly. This section goes over how the client APIs we've provided work in a generic manner. Note that these are not a standard, more just the way the Buttplug Core Team have chosen to do things. If you'd like to implement your own client in your own way, *go nuts*.
+
+## Client/Server Interaction
+
+There are two types of communication between the client and the server:
+
+- Symmetric (Client -> Server -> Client)
+    - Client sends a message, server replies. For instance, when a device command is sent from the client, the server will return information afterward saying whether or not that command succeeded.
+- Asymmetric (Server -> Client)
+    - Server sends a message to the client with no expectation of response. For instance, when a new device connects to the server, the server will tell the client the device has been added, but the server doesn't expect the client to acknowledge this. These messages are considered fire and forget.
+
+Symmetric interaction between the client and the server may be a very, very long process. Sometimes 100s of milliseconds, sometimes possibly even multiple seconds if device connections are very poor. Client APIs try to deal with this via usage of Async/Await, assuming this capability is available in the language you have chosen to use.
+
+For Asymmetric messages, first-class events are used, where possible (i.e. Javascript, C#). Otherwise, callbacks, Promises, or Futures are used depending on library capabilities. (i.e. python, C/C++, Rust).
+
+{% codegroup %}
+```csharp
+sync/async example
+```
+```js
+sync/async exmaple
+```
+```twine
+sync/async exmaple
+```
+{% endcodegroup %}
+
+
 ## Dealing With Errors
 
 As with all technology, things in Buttplug can and often will go wrong. As stated in the ethics section, due to the context of Buttplug, the user may be having sex with/via an application when things go wrong. This means things can go very, very wrong. 

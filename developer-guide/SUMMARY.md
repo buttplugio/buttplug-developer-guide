@@ -19,7 +19,7 @@
     - [Configuration Examples](architecture.md#configuration-examples)
 - [Sticking Buttplug In Your Application](writing-buttplug-applications/intro.md)
     - [Buttplug Session Overview](writing-buttplug-applications/intro.md#buttplug-session-overview)
-    - [Dealing With Errors](writing-buttplug-applications/errors.md)
+    - [Generic API Basics](writing-buttplug-applications/api-basics.md)
     - [Choosing a Connector](writing-buttplug-applications/connectors.md)
     - [Connecting](writing-buttplug-applications/connecting.md)
     - [Device Enumeration](writing-buttplug-applications/device-enum.md)
