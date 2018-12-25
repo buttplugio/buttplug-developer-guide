@@ -45,7 +45,6 @@ The above types only apply to clients that have connected to a server. Custom ex
 ```
 ```js
     var s = console.warn;
-```ts
 ```
 ```twine
 ```
@@ -78,31 +77,10 @@ To do this, you'll need to have a bit of knowledge of how servers work in the re
 
 This process is outlined in the code example below.
 
-{% codegroup %}
-```csharp::C#
-```
-```js
-    var s = console.warn;
-```ts
-```
-```twine
-```
-{% endcodegroup %}
-
 ### External Servers and Connectors
 
 For using external servers, such as Websocket or IPC Servers, the process is much simpler. You'll need to provide the user a way to pass in the server address, then you just create the connector object using that address. Since you don't have access to the actual server object, you can assume all Device Manager setup is done by the server itself.
 
-{% codegroup %}
-```csharp::C#
-```
-```js
-    var s = console.warn;
-```ts
-```
-```twine
-```
-{% endcodegroup %}
 
 ## Connecting
 
