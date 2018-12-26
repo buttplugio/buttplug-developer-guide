@@ -16,8 +16,7 @@ Symmetric interaction between the client and the server may be a very, very long
 For Asymmetric messages, first-class events are used, where possible (i.e. Javascript, C#). Otherwise, callbacks, Promises, or Futures are used depending on library capabilities. (i.e. python, C/C++, Rust).
 
 {% codegroup %}
-```csharp
-sync/async example
+```csharp::C#::./examples/csharp/AsyncExample/Program.cs
 ```
 ```js
 sync/async exmaple

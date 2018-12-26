@@ -13,31 +13,24 @@ namespace ExceptionExample
             // Exceptions bubble up.
             try
             {
-
             }
-            catch (ButtplugHandshakeException e)
+            catch (ButtplugHandshakeException)
             {
-
             }
-            catch (ButtplugDeviceException e)
+            catch (ButtplugDeviceException)
             {
-
             }
-            catch (ButtplugMessageException e)
+            catch (ButtplugMessageException)
             {
-
             }
-            catch (ButtplugPingException e)
+            catch (ButtplugPingException)
             {
-
             }
-            catch (ButtplugClientConnectorException e)
+            catch (ButtplugClientConnectorException)
             {
-
             }
-            catch (ButtplugException e)
+            catch (ButtplugException)
             {
-
             }
         }
     }
