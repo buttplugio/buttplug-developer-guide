@@ -24,7 +24,7 @@ To do this, you'll need to have a bit of knowledge of how servers work in the re
 This process is outlined in the code example below.
 
 {% codegroup %}
-```csharp::C#::./examples/csharp/ExceptionExample/Program.cs
+```csharp::C#::./examples/csharp/EmbeddedConnectorExample/Program.cs
 ```
 ```js
 embedded example here
@@ -39,8 +39,7 @@ embedded example here
 For using external servers, such as Websocket or IPC Servers, the process is much simpler. You'll need to provide the user a way to pass in the server address, then you just create the connector object using that address. Since you don't have access to the actual server object, you can assume all Device Manager setup is done by the server itself.
 
 {% codegroup %}
-```csharp
-external example here
+```csharp::C#::./examples/csharp/RemoteConnectorExample/Program.cs
 ```
 ```js
 external example here

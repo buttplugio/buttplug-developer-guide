@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionExample", "ExceptionExample\ExceptionExample.csproj", "{6D2B58C9-1D3D-4B9A-8936-6D7A2AC4FFE9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedConnectorExample", "EmbeddedConnectorExample\EmbeddedConnectorExample.csproj", "{9CAB5979-1967-4940-AE39-5B80976B86E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncExample", "AsyncExample\AsyncExample.csproj", "{D276979C-353B-479D-9C48-D732432C834E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteConnectorExample", "RemoteConnectorExample\RemoteConnectorExample.csproj", "{C503FDDD-9104-4F8D-B880-9763F19B3303}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncExample", "AsyncExample\AsyncExample.csproj", "{E4AAB65E-B42F-473B-92BC-85AEE2E79DE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionExample", "ExceptionExample\ExceptionExample.csproj", "{F6FABB11-2C62-4D75-A05A-5C4251D8ECDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6D2B58C9-1D3D-4B9A-8936-6D7A2AC4FFE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D2B58C9-1D3D-4B9A-8936-6D7A2AC4FFE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D2B58C9-1D3D-4B9A-8936-6D7A2AC4FFE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D2B58C9-1D3D-4B9A-8936-6D7A2AC4FFE9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D276979C-353B-479D-9C48-D732432C834E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D276979C-353B-479D-9C48-D732432C834E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D276979C-353B-479D-9C48-D732432C834E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D276979C-353B-479D-9C48-D732432C834E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CAB5979-1967-4940-AE39-5B80976B86E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CAB5979-1967-4940-AE39-5B80976B86E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CAB5979-1967-4940-AE39-5B80976B86E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CAB5979-1967-4940-AE39-5B80976B86E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C503FDDD-9104-4F8D-B880-9763F19B3303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C503FDDD-9104-4F8D-B880-9763F19B3303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C503FDDD-9104-4F8D-B880-9763F19B3303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C503FDDD-9104-4F8D-B880-9763F19B3303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4AAB65E-B42F-473B-92BC-85AEE2E79DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4AAB65E-B42F-473B-92BC-85AEE2E79DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4AAB65E-B42F-473B-92BC-85AEE2E79DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4AAB65E-B42F-473B-92BC-85AEE2E79DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6FABB11-2C62-4D75-A05A-5C4251D8ECDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6FABB11-2C62-4D75-A05A-5C4251D8ECDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6FABB11-2C62-4D75-A05A-5C4251D8ECDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6FABB11-2C62-4D75-A05A-5C4251D8ECDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
