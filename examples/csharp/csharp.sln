@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncExample", "AsyncExampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionExample", "ExceptionExample\ExceptionExample.csproj", "{F6FABB11-2C62-4D75-A05A-5C4251D8ECDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionExample", "ConnectionExample\ConnectionExample.csproj", "{24461131-0B01-453C-AB1D-668AFE532286}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingTimeoutExample", "PingTimeoutExample\PingTimeoutExample.csproj", "{D5833955-40B4-48B8-800F-A82C8025FD1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{F6FABB11-2C62-4D75-A05A-5C4251D8ECDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6FABB11-2C62-4D75-A05A-5C4251D8ECDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6FABB11-2C62-4D75-A05A-5C4251D8ECDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24461131-0B01-453C-AB1D-668AFE532286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24461131-0B01-453C-AB1D-668AFE532286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24461131-0B01-453C-AB1D-668AFE532286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24461131-0B01-453C-AB1D-668AFE532286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5833955-40B4-48B8-800F-A82C8025FD1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5833955-40B4-48B8-800F-A82C8025FD1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5833955-40B4-48B8-800F-A82C8025FD1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5833955-40B4-48B8-800F-A82C8025FD1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

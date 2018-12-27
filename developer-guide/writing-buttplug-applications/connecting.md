@@ -4,12 +4,11 @@ Once you've created a connector, it's time to connect to a server!
 
 As all connector setup was done via the Connector setup, this is now just down to dealing with whether the connection process actually worked or not.
 
-- For embedded connectors in the reference implementation, connection will always succeed, as long as the client and server are from the same library version. Hopefully, that is a situation that will rarely if ever happen.
+- For embedded connectors in the reference implementation, connection will always succeed, as long as the client and server are from the same library version (See below for issues involving compatibility). Hopefully, that is a situation that will rarely if ever happen.
 - For external connectors, connections can fail due to usual connection issues (wrong address, server not up, network not on, etc...). There is also a chance that the client and server could have a version mismatch. We'll cover this in the next section.
 
 {% codegroup %}
-```csharp
-basic connect here
+```csharp::C#::./examples/csharp/ConnectionExample/Program.cs
 ```
 ```js
 basic connect here
@@ -40,8 +39,7 @@ In reference library implementations of the Client, ping negotiation is handled 
 On ping failure in the client APIs, you should either receive some sort of event or callback denoting the error. The event or callback arguments will contain an error with an error class type of ERROR_PING. Any subsequent calls to server commands (device search/commands, etc) will fail from this point on.
 
 {% codegroup %}
-```csharp
-ping example here
+```csharp::C#::./examples/csharp/PingTimeoutExample/Program.cs
 ```
 ```js
 ping example here
