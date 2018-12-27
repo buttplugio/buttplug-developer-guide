@@ -2,7 +2,7 @@
 - [Foreword](foreword.md#foreword)
     - [Wants and Needs](foreword.md#wants-and-needs)
     - [I Want To Be A Shirt](foreword.md#i-want-to-be-a-shirt)
-    - [C'est n'est pas une Buttplug](foreword.md#cest-nest-pas-une-buttplug)
+    - [C'est n'est pas un Buttplug](foreword.md#cest-nest-pas-un-buttplug)
     - [Why Do I Need You To Tell Me Where My Butt Is](foreword.md#why-do-i-need-you-to-tell-me-where-my-butt-is)
 - [Introduction](introduction.md)
     - [What Even Is Buttplug?](introduction.md#what-even-is-buttplug)
