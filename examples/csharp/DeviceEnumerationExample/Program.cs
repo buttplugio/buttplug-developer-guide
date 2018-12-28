@@ -39,7 +39,8 @@ namespace DeviceEnumerationExample
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Can't connect to Buttplug Server, exiting! Message: {ex.InnerException.Message}");
+                Console.WriteLine(
+                    $"Can't connect, exiting! Message: {ex.InnerException.Message}");
                 await WaitForKey();
                 return;
             }
@@ -57,17 +58,19 @@ namespace DeviceEnumerationExample
             client.ScanningFinished += (aObj, aScanningFinishedArgs) =>
                 Console.WriteLine("Device scanning is finished!");
 
-            // Now we can start scanning for devices, and any time a device is found, we should see
-            // the device name printed out.
+            // Now we can start scanning for devices, and any time a device is
+            // found, we should see the device name printed out.
             await client.StartScanningAsync();
             await WaitForKey();
 
-            // Some Subtype Managers will scan until we still them to stop, so let's stop them now.
+            // Some Subtype Managers will scan until we still them to stop, so
+            // let's stop them now.
             await client.StopScanningAsync();
             await WaitForKey();
 
-            // Since we've scanned, the client holds information about devices it knows about for
-            // us. These devices can be accessed with the Devices getter on the client.
+            // Since we've scanned, the client holds information about devices it
+            // knows about for us. These devices can be accessed with the Devices
+            // getter on the client.
 
             Console.WriteLine("Client currently knows about these devices:");
             foreach (var device in client.Devices)
