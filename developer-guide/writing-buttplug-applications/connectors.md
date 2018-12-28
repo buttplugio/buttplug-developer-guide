@@ -17,9 +17,11 @@ An Embedded server means both the client and server are part of the application 
 - This may tie you to a certain platform, i.e. if you're using Windows libraries, your application might only run on windows. This all depends on the library you're using, though.
 - You'll need to set up the server yourself in your application.
 
-There's not really much to cover about the first two problems, they're just part of the choice you make in using this method. However, going over setting up a server is important, as this will require some extra work on your end to make sure users have access to the devices they expect.
+There's not really much to cover about the first two problems, they're just part of the choice you make in using this method. However, going over setting up a server is important, as this may require some extra work on your end to make sure users have access to the devices they expect.
 
-To do this, you'll need to have a bit of knowledge of how servers work in the reference implementations. All server reference implementations have a "Device Manager", which manage different communication busses, like usb, bluetooth, serial, and so on. These Device Managers must have "Subtype Managers" added to them (via a server API) before the server starts, so that the server can use them to find and present devices to clients.
+To set up an embedded server, you'll need to have a bit of knowledge of how servers work in the reference implementations. All server reference implementations have a "Device Manager", which manage different communication busses, like usb, bluetooth, serial, and so on. These Device Managers must have "Subtype Managers" added to them (via a server API) before the server starts, so that the server can use them to find and present devices to clients.
+
+In some implementations (this depends on language/framework capabilities), all available Subtype Managers are added by default. Sometimes you may need to add them manually.
 
 This process is outlined in the code example below.
 
