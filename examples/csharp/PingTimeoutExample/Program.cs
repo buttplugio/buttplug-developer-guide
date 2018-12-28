@@ -59,6 +59,11 @@ namespace PingTimeoutExample
             // Let's go ahead and connect.
             await client.ConnectAsync();
             Console.WriteLine("Client connected");
+            
+            // If you'd like more information on what's going on, uncomment these 2 lines.
+
+            // client.Log += (aObj, aMsg) => Console.WriteLine(aMsg.Message.LogMessage);
+            // await client.RequestLogAsync(ButtplugLogLevel.Debug);
 
             // If we just sit here and wait, the client and server will happily
             // ping each other internally, so we shouldn't see anything printed

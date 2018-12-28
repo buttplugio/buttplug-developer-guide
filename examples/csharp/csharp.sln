@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionExample", "Connec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingTimeoutExample", "PingTimeoutExample\PingTimeoutExample.csproj", "{D5833955-40B4-48B8-800F-A82C8025FD1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceEnumerationExample", "DeviceEnumerationExample\DeviceEnumerationExample.csproj", "{F5B1B177-D186-4083-AE8B-25DEDC697787}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{D5833955-40B4-48B8-800F-A82C8025FD1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5833955-40B4-48B8-800F-A82C8025FD1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5833955-40B4-48B8-800F-A82C8025FD1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5B1B177-D186-4083-AE8B-25DEDC697787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5B1B177-D186-4083-AE8B-25DEDC697787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5B1B177-D186-4083-AE8B-25DEDC697787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5B1B177-D186-4083-AE8B-25DEDC697787}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
