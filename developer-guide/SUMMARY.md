@@ -22,10 +22,10 @@
     - [Generic API Basics](writing-buttplug-applications/api-basics.md)
     - [Choosing a Connector](writing-buttplug-applications/connectors.md)
     - [Connecting](writing-buttplug-applications/connecting.md)
+    - [Logging](writing-buttplug-applications/logging.md)
     - [Device Enumeration](writing-buttplug-applications/device-enum.md)
     - [Device Control](writing-buttplug-applications/device-control.md)
-    - [Logging](writing-buttplug-applications/logging.md)
-    - [Putting It All Together](writing-buttplug-applications.md/application.md)
+    - [Putting It All Together](writing-buttplug-applications/application.md)
 <!-- New TOC? -->
 <!-- - [Sticking Buttplug In Your Application](writing-buttplug-applications.md) -->
 <!-- - [Sticking New Devices In Buttplug](new-devices.md) -->
