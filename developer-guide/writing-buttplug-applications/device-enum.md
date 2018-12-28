@@ -25,7 +25,7 @@ There are 2 events related to device connections that the client may fire:
     
 While the events are handy for updating UI, Client implementations usually also hold a list of currently connected devices that can be used for iteration if needed.
 
-Both events may be fired at any time during a Buttplug Client/Server session. It is rare for DeviceAdded to be called outside of scanning being active, but it can happen and should be planned for.
+Both events may be fired at any time during a Buttplug Client/Server session. DeviceAdded can be called outside of StartScanning()/StopScanning(), and even right after connect, so it is a good idea to set up a callback/handler for that event before connecting the client to the server.
 
 ## Code Example
 
