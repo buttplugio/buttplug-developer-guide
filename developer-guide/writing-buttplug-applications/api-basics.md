@@ -52,10 +52,10 @@ The above types only apply to clients that have connected to a server. Custom ex
 ```csharp::C#::./examples/csharp/ExceptionExample/Program.cs
 ```
 ```js
-    var s = console.warn;
+error example
 ```
 ```twine
-test
+error example
 ```
 {% endcodegroup %}
 
