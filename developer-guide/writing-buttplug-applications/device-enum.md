@@ -32,8 +32,7 @@ Both events may be fired at any time during a Buttplug Client/Server session. It
 Here's some examples of how device enumeration works in different implementations of Buttplug.
 
 {% codegroup %}
-```csharp
-external example here
+```csharp::C#::./examples/csharp/DeviceEnumerationExample/Program.cs
 ```
 ```js
 external example here
