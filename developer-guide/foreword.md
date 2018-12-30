@@ -82,7 +82,7 @@ A quiet voice pops up from a few yards, or miles, over. Scale is difficult when 
 
 Fuck.
 
-## C'est n'est pas un Buttplug
+## Ceci n'est pas un Buttplug
 
 The preceding story actually happened.
 
