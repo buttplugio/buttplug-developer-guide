@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedConnectorExample", "EmbeddedConnectorExample\EmbeddedConnectorExample.csproj", "{9CAB5979-1967-4940-AE39-5B80976B86E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmbeddedConnectorExample", "EmbeddedConnectorExample\EmbeddedConnectorExample.csproj", "{9CAB5979-1967-4940-AE39-5B80976B86E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteConnectorExample", "RemoteConnectorExample\RemoteConnectorExample.csproj", "{C503FDDD-9104-4F8D-B880-9763F19B3303}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoteConnectorExample", "RemoteConnectorExample\RemoteConnectorExample.csproj", "{C503FDDD-9104-4F8D-B880-9763F19B3303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncExample", "AsyncExample\AsyncExample.csproj", "{E4AAB65E-B42F-473B-92BC-85AEE2E79DE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncExample", "AsyncExample\AsyncExample.csproj", "{E4AAB65E-B42F-473B-92BC-85AEE2E79DE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionExample", "ExceptionExample\ExceptionExample.csproj", "{F6FABB11-2C62-4D75-A05A-5C4251D8ECDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionExample", "ExceptionExample\ExceptionExample.csproj", "{F6FABB11-2C62-4D75-A05A-5C4251D8ECDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionExample", "ConnectionExample\ConnectionExample.csproj", "{24461131-0B01-453C-AB1D-668AFE532286}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectionExample", "ConnectionExample\ConnectionExample.csproj", "{24461131-0B01-453C-AB1D-668AFE532286}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingTimeoutExample", "PingTimeoutExample\PingTimeoutExample.csproj", "{D5833955-40B4-48B8-800F-A82C8025FD1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PingTimeoutExample", "PingTimeoutExample\PingTimeoutExample.csproj", "{D5833955-40B4-48B8-800F-A82C8025FD1B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceEnumerationExample", "DeviceEnumerationExample\DeviceEnumerationExample.csproj", "{F5B1B177-D186-4083-AE8B-25DEDC697787}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceControlExample", "DeviceControlExample\DeviceControlExample.csproj", "{92EEB153-28C8-466A-8DE8-A50B014CB36E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{F5B1B177-D186-4083-AE8B-25DEDC697787}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5B1B177-D186-4083-AE8B-25DEDC697787}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5B1B177-D186-4083-AE8B-25DEDC697787}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92EEB153-28C8-466A-8DE8-A50B014CB36E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92EEB153-28C8-466A-8DE8-A50B014CB36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92EEB153-28C8-466A-8DE8-A50B014CB36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92EEB153-28C8-466A-8DE8-A50B014CB36E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
