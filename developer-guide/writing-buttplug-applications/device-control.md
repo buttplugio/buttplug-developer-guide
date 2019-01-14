@@ -23,3 +23,22 @@ If you can't find messages you need to control your device, check the [Buttplug 
 
 As a user of a Buttplug Client API, you should never be expected to send raw Buttplug Messages. Most Client APIs will provide message sending functions for you, usually attached to device objects or structures. If the device accepts the message type represented by the function you call, it should be sent to the device. Otherwise, it will fail.
 
+:::: tabs
+
+::: tab C# id="csharp-embedded"
+<<< lang=csharp @/examples/csharp/DeviceControlExample/Program.cs
+:::
+
+::: tab Javascript id="javascript-embedded"
+```js
+embedded example here
+```
+:::
+
+::: tab Twine id="twine-embedded"
+```html
+embedded example here
+```
+:::
+
+::::
