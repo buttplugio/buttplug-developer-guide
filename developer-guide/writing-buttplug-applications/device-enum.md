@@ -31,13 +31,22 @@ Both events may be fired at any time during a Buttplug Client/Server session. De
 
 Here's some examples of how device enumeration works in different implementations of Buttplug.
 
-{% codegroup %}
-```csharp::C#::./examples/csharp/DeviceEnumerationExample/Program.cs
-```
+:::: tabs
+
+::: tab C# id="csharp-enum"
+<<< lang=csharp @/examples/csharp/DeviceEnumerationExample/Program.cs
+:::
+
+::: tab Javascript id="js-enum"
 ```js
 external example here
 ```
-```twine
+:::
+
+::: tab Twine id="twine-enum"
+```html
 external example here
 ```
-{% endcodegroup %}
+:::
+
+::::

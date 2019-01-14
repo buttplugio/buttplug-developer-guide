@@ -15,17 +15,24 @@ Symmetric interaction between the client and the server may be a very, very long
 
 For Asymmetric messages, first-class events are used, where possible (i.e. Javascript, C#). Otherwise, callbacks, Promises, or Futures are used depending on library capabilities. (i.e. python, C/C++, Rust).
 
-{% codegroup %}
-```csharp::C#::./examples/csharp/AsyncExample/Program.cs
-```
-```js
-sync/async exmaple
-```
-```twine
-sync/async exmaple
-```
-{% endcodegroup %}
+:::: tabs
 
+::: tab C#
+<<< lang=csharp @/examples/csharp/AsyncExample/Program.cs
+:::
+
+::: tab Javascript
+```javascript
+// sync/async example
+```
+:::
+
+::: tab Twine
+```html
+sync/async example
+```
+:::
+::::
 
 ## Dealing With Errors
 
@@ -48,15 +55,24 @@ Errors in live Buttplug sessions come in the following flavors.
 
 The above types only apply to clients that have connected to a server. Custom exceptions or errors may also be thrown by library implementations of Buttplug. For instance, a Connector may throw a custom error or exception based on the type of transport it is using. For more information, see the documentation of the specific Buttplug implementation you are using. 
 
-{% codegroup %}
-```csharp::C#::./examples/csharp/ExceptionExample/Program.cs
+:::: tabs
+
+::: tab C#
+<<< lang=csharp @/examples/csharp/ExceptionExample/Program.cs
+:::
+
+::: tab Javascript
+```javascript
+// error example
 ```
-```js
+:::
+
+::: tab Twine
+```html
 error example
 ```
-```twine
-error example
-```
-{% endcodegroup %}
+:::
+
+::::
 
 **NOTE:** You may notice that there's no way to tell exactly what an error is from this message. You get a class, but the information itself is encoded in the message, which is not standardized. Therefore it's impossible to tell whether a device disconnected, or you just send a connected device an incorrect message. This is bad, and [will hopefully be fixed at some point in the future](https://github.com/buttplugio/buttplug/issues/70).

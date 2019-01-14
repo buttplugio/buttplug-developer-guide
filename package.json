@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "description": "Buttplug Developer Guide",
   "scripts": {
-    "install": "gitbook install",
-    "build": "gitbook build",
-    "all": "gitbook install && gitbook build"
+    "dev": "vuepress dev developer-guide",
+    "build": "vuepress build developer-guide"
   },
   "repository": {
     "type": "git",
@@ -17,10 +16,12 @@
     "url": "https://github.com/metafetish/buttplug-developer-guide"
   },
   "homepage": "https://github.com/metafetish/buttplug-developer-guide",
-  "devDependencies": {
-    "gitbook": "^3.2.3",
-    "gitbook-plugin-codegroup": "git+https://github.com/qdot/gitbook-plugin-codegroup",
-    "gitbook-plugin-piwik": "git+https://github.com/qdot/gitbook-plugin-piwik",
-    "gitbook-cli": "^2.3.2"
+  "dependencies": {
+    "@vuepress/markdown": "qdot/vuepress-markdown",
+    "@vuepress/plugin-back-to-top": "^1.0.0-alpha.0",
+    "vue-tabs-component": "^1.5.0",
+    "vuepress": "^1.0.0-alpha.31",
+    "vuepress-plugin-matomo": "^1.0.2",
+    "vuepress-plugin-tabs": "^0.2.0"
   }
 }

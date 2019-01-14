@@ -7,16 +7,25 @@ As all connector setup was done via the Connector setup, this is now just down t
 - For embedded connectors in the reference implementation, connection will always succeed, as long as the client and server are from the same library version (See below for issues involving compatibility). Hopefully, that is a situation that will rarely if ever happen.
 - For external connectors, connections can fail due to usual connection issues (wrong address, server not up, network not on, etc...). There is also a chance that the client and server could have a version mismatch. We'll cover this in the next section.
 
-{% codegroup %}
-```csharp::C#::./examples/csharp/ConnectionExample/Program.cs
-```
+:::: tabs
+
+::: tab C# id="csharp-connecting"
+<<< lang=csharp @/examples/csharp/ConnectionExample/Program.cs
+:::
+
+::: tab Javascript id="js-connecting"
 ```js
 basic connect here
 ```
-```twine
+:::
+
+::: tab Twine id="twine-connecting"
+```html
 basic connect here
 ```
-{% endcodegroup %}
+:::
+
+::::
 
 ## Client/Server Compatibility
 
@@ -38,16 +47,25 @@ In reference library implementations of the Client, ping negotiation is handled 
 
 On ping failure in the client APIs, you should either receive some sort of event or callback denoting the error. The event or callback arguments will contain an error with an error class type of ERROR_PING. Any subsequent calls to server commands (device search/commands, etc) will fail from this point on.
 
-{% codegroup %}
-```csharp::C#::./examples/csharp/PingTimeoutExample/Program.cs
-```
+:::: tabs
+
+::: tab C# id="csharp-ping"
+<<< lang=csharp @/examples/csharp/PingTimeoutExample/Program.cs
+:::
+
+::: tab Javascript id="js-ping"
 ```js
 ping example here
 ```
-```twine
+:::
+
+::: tab Twine id="twine-ping"
+```html
 ping example here
 ```
-{% endcodegroup %}
+:::
+
+::::
 
 ## What to Expect on Successful Connect
 

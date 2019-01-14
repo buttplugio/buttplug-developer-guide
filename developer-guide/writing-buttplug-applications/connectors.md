@@ -25,28 +25,46 @@ In some implementations (this depends on language/framework capabilities), all a
 
 This process is outlined in the code example below.
 
-{% codegroup %}
-```csharp::C#::./examples/csharp/EmbeddedConnectorExample/Program.cs
-```
+:::: tabs
+
+::: tab C# id="csharp-embedded"
+<<< lang=csharp @/examples/csharp/EmbeddedConnectorExample/Program.cs
+:::
+
+::: tab Javascript id="javascript-embedded"
 ```js
 embedded example here
 ```
-```twine
+:::
+
+::: tab Twine id="twine-embedded"
+```html
 embedded example here
 ```
-{% endcodegroup %}
+:::
+
+::::
 
 ## External Servers and Connectors
 
 For using external servers, such as Websocket or IPC Servers, the process is much simpler. You'll need to provide the user a way to pass in the server address, then you just create the connector object using that address. Since you don't have access to the actual server object, you can assume all Device Manager setup is done by the server itself.
 
-{% codegroup %}
-```csharp::C#::./examples/csharp/RemoteConnectorExample/Program.cs
-```
+:::: tabs
+
+::: tab C# id="csharp-external"
+<<< lang=csharp @/examples/csharp/RemoteConnectorExample/Program.cs
+:::
+
+::: tab Javascript id="javascript-external"
 ```js
 external example here
 ```
-```twine
+:::
+
+::: tab Twine id="twine-external"
+```html
 external example here
 ```
-{% endcodegroup %}
+:::
+
+::::

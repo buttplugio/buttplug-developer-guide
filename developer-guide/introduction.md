@@ -41,23 +41,33 @@ Any portion of the guide that uses the reference libraries should be considered 
 
 Chapters involving code will have interfaces similar to the one shown here.
 
-{% codegroup %}
+:::: tabs
+
+::: tab C#
 ```csharp
 // This is some C#
 ```
+:::
 
+::: tab Typescript
 ```typescript
 // This is some Typescript
 ```
+:::
 
+::: tab Javascript
 ```javascript
 // This is some Javascript
 ```
+:::
 
-```html::twine
+::: tab Twine
+```html
 <!-- This is Sugarcube Twine -->
 ```
-{% endcodegroup %}
+:::
+
+::::
 
 The guide tries to cover examples for all reference implementations, where possible. Due to variations in program language features, there is a good chance that while all of the examples will achieve the same goal, they may do so in very different ways. Notes about language specific requirements and implementations will be included as comments in the examples for that language.
 
