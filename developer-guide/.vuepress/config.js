@@ -8,9 +8,10 @@ module.exports = {
         title: "Flared Basics",
         collapsable: false,
         children: [
-          "/introduction.md",
-          "/buttplug-ethics.md",
-          "/architecture.md",
+          "/intro/introduction.md",
+          "/intro/how-to-read.md",
+          "/intro/buttplug-ethics.md",
+          "/intro/architecture.md",
         ]
       },
       {

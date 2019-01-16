@@ -1,35 +1,4 @@
-# Introduction
-
-## What Even Is Buttplug?
-
-For the purposes of this guide, "Buttplug" refers to two things:
-
-- An abstract protocol for enumerating, connecting to, and controlling intimate interaction hardware (sex toys, estim, fucking machines, etc...).
-- Reference implementations of the aforementioned protocol in a specific programming languages/environment, providing an API for developers to build applications on.
-
-"Buttplug" used alone usually refers to the protocol, while "Buttplug [language]" (like "Buttplug C#") refers to the reference implementation in a specific language (C#, in this case).
-
-## So Does It Just Control Buttplugs?
-
-This is one of the most asked questions around the Buttplug project. The Buttplug project was built to control all sorts of hardware, not just buttplugs. As of this writing, implementations can control:
-
-- Gamepads
-- Vibrators (of all sorts, be it rabbit, buttplug, prostate, wand, etc...)
-- Strokers
-- Electostimulation
-
-This list will continue to grow over time. 
-
-Some of the reasons the project is named Buttplug are:
-
-- A buttplug (the toy) is a non-gender-specific sex toy. Everyone has a butt. Butts can be inclusive.
-- Technology and the surrounding culture is far to sterile. Buttplugs, used correctly, are usually not.
-- It seemed funny at the time, even though no thought was put into how it would sound when needing to be mentioned in press articles, grant applications, etc...
-    - Upon further consideration, that made it even funnier.
-
-This list will also continue to grow over time, as the project leadership continue to try and convince itself this was a good branding choice.
-
-## About This Guide
+# About This Guide
 
 The Buttplug Developer Guide covers a few different topics.
 
@@ -94,15 +63,9 @@ However, based on feedback, apparently readers have "other things to
 do". With that severe disrespect in mind, here's a list of what you'll
 learn from each of the sections in this guide.
 
-* **Buttplug Ethics**
-    * Summary of just a few of the myriad ethics issues encountered when writing sex software. A good way to find out what you may be responsible for if you decide to work with the library. Everyone should read this one.
-* **Sticking Buttplug In Your Application**
+* **Intro**
+    * Well, you're reading it already, so that's a good start. The intro also contains a summary of just a few of the many, many ethics issues encountered when writing sex software, which is a good way to find out what you may be responsible for if you decide to work with the library. There's also an overview of what Buttplug architecture looks like that's pretty key to the rest of the guide. Everyone should read this whole section.
+* **Sticking Buttplug In**
     * All about the Client side of Buttplug. Useful for those wanting to build applications using prebuilt servers. If you just want to build a game, movie player, control app, or whatever, this is the chapter for you.
-* **Sticking New Messages and Devices In Buttplug**
-    * If you've built a new device, or have a device the reference libraries don't yet support, this is where you'll find out how to add it to Buttplug libraries. This chapter will also detail what to do if you need a new message added to the protocol to support your device.
-* **Strategies Against Buttplug Architecture**
-    * Outlines the design of the reference libraries. Why things like Connectors and Device Managers and Message Sorters exist. Check this out if you want to get into Core Buttplug development, or are curious about what some of our bugs/issues are about.
-* **The Message Menagerie**
-    * Design reasoning behind messages in the low-level Buttplug protocol. Good for Server/Core Buttplug development knowledge.
-* **Buttplug Cookbook**
-    * Common design patterns and strategies for using Buttplug. If you want to know how the Core Buttplug Engineers do things with the library, or learn from the experience of other projects using the system, this is the place to look. Everything from command conversions to pattern building to whatever else looks an oft-repeated good idea that should be documented.
+* **Inflating Buttplug**
+    * How to add things to the Buttplug Core, including extending Buttplug Servers with new device types and communication busses, implementing Buttplug servers, adding new message to the Protocol Spec, and writing clients in new programming languages.
