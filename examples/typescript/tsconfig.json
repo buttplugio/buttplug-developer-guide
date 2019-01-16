@@ -1,0 +1,18 @@
+{
+  "compilerOptions" : {
+    "lib": ["es2015", "dom", "es6"],
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "declaration": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "./src/**/*.ts"
+  ]
+}

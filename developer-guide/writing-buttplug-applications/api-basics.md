@@ -21,16 +21,16 @@ For Asymmetric messages, first-class events are used, where possible (i.e. Javas
 <<< lang=csharp @/examples/csharp/AsyncExample/Program.cs
 :::
 
+::: tab Typescript
+<<< lang=typescript @/examples/typescript/src/async-example.ts
+:::
+
 ::: tab Javascript
-```javascript
-// sync/async example
-```
+<<< lang=javascript @/examples/javascript/async-example.js
 :::
 
 ::: tab Twine
-```html
-sync/async example
-```
+<<< lang=html @/examples/twine/async-example.twee
 :::
 ::::
 
