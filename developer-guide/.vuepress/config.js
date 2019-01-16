@@ -1,3 +1,4 @@
+let date = new Date().toJSON();
 // .vuepress/config.js
 module.exports = {
   themeConfig: {
@@ -36,6 +37,7 @@ module.exports = {
         ]
       },
     ],
+    repo: 'buttplugio/buttplug-developer-guide',
   },
   plugins: [
     [
@@ -47,5 +49,25 @@ module.exports = {
     ],
     "@vuepress/plugin-back-to-top",
     "vuepress-plugin-tabs"
+  ],
+  evergreen: true,
+  title: "Buttplug Developer Guide",
+  description: "Manual for developing applications using the Buttplug Intimate Hardware Control Library.",
+  head: [
+    ['link', { rel: 'icon', href: '/buttplug.svg' }],
+    ["meta", {property: "og:type", content:"website"}],
+    ["meta", {property: "og:title", content:"Buttplug Intimate Hardware Control Library Developer Guide"}],
+    ["meta", {property: "og:url", content:"https://buttplug-developer-guide.docs.buttplug.io"}],
+    ["meta", {property: "og:site_name", content:"Buttplug Intimate Hardware Control Library"}],
+    ["meta", {property: "og:description", content:"Manual for developing applications using the Buttplug Intimate Hardware Control Library."}],
+    ["meta", {property: "og:locale", content:"default"}],
+    ["meta", {property: "og:image", content:"https://buttplug-developer-guide.docs.buttplug.io/buttplug-logo-opengraph.png"}],
+    ["meta", {property: "og:updated_time", content:date}],
+    ["meta", {name:"twitter:card", content:"summary"}],
+    ["meta", {name:"twitter:title", content:"Buttplug Intimate Hardware Control Library Developer Guide"}],
+    ["meta", {name:"twitter:description", content:"Manual for developing applications using the Buttplug Intimate Hardware Control Library."}],
+    ["meta", {name:"twitter:image", content:"https://buttplug-developer-guide.docs.buttplug.io/buttplug-logo-opengraph.png"}],
+    ["meta", {name:"twitter:creator", content:"@buttplugio"}],
+
   ]
 };
