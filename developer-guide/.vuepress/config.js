@@ -4,10 +4,17 @@ module.exports = {
     sidebar: [
       "/",
       "/foreword.md",
-      "/introduction.md",
-      "/architecture.md",
       {
-        title: "Writing Buttplug Applications",
+        title: "Flared Basics",
+        collapsable: false,
+        children: [
+          "/introduction.md",
+          "/buttplug-ethics.md",
+          "/architecture.md",
+        ]
+      },
+      {
+        title: "Sticking Buttplug In",
         collapsable: false,
         children: [
           "/writing-buttplug-applications/intro.md",
@@ -18,6 +25,13 @@ module.exports = {
           "/writing-buttplug-applications/device-enum.md",
           "/writing-buttplug-applications/device-control.md",
           "/writing-buttplug-applications/application.md",
+        ]
+      },
+      {
+        title: "Inflating Buttplug",
+        collapsable: false,
+        children: [
+          "/extending-buttplug-core/intro.md"
         ]
       },
     ],

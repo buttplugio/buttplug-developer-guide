@@ -1,4 +1,4 @@
-# Sticking Buttplug In Your Application
+# Writing Buttplug Applications
 
 Enough talk, let's get to Buttplugging!
 
