@@ -61,10 +61,12 @@ The above types only apply to clients that have connected to a server. Custom ex
 <<< lang=csharp @/examples/csharp/ExceptionExample/Program.cs
 :::
 
+::: tab Typescript
+<<< lang=typescript @/examples/typescript/src/errors-example.ts
+:::
+
 ::: tab Javascript
-```javascript
-// error example
-```
+<<< lang=javascript @/examples/javascript/errors-example.js
 :::
 
 ::: tab Twine
