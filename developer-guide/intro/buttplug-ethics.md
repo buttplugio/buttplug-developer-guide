@@ -7,7 +7,7 @@
 
 One would normally expect something called a "Developer Guide" to mainly cover technical matters related to a certain technology a developer wants to use. While this document spends most of its words on that, we'd also like to start with a discussion of the ethics of writing and distributing free, open source software (FOSS) that deals with sex. Software ethics in general is an especially complex and difficult topic, and as Buttplug deals with sexual contexts, it cannot really stand apart from the human-focused portion of its use, unless computers somehow start fucking too.
 
-If you want to build software for someone to have sex with, you're taking on some responsibilities whether you like it or not. We can't force you to read this section, but it's good information to be aware of so you're not caught off-guard by what your creation may enact upon the world. 
+If you want to build software for someone to have sex with, you're taking on some responsibilities whether you like it or not. Even if our libraries are defect free (which they won't be) and your applications or patches are perfect (which they won't be), there are still many issues of social context to cover from the usage of the library. We can't force you to read this section, but it's good information to be aware of so you're not caught off-guard by what your creation may enact upon the world. 
 
 However, if you're curious about how we deal with developing this project, are worried about feeling safe while using it, or want to know what responsibilities come with building software with Buttplug, this section is for you.
 
@@ -19,7 +19,7 @@ The Buttplug Mission Statement is at the core of how we deal with ethics in the 
 
 Now, you may be thinking "Wait. WTF. I just want to use this project to masturbate/have sex. Why the hell does this software need that kind of language when no other sex project does, and things like my database software also doesn't?"
 
-That's a fair point. We'll be spending some time here breaking down that statement into plain language. We'll provide a few examples of how this project relates to current trends, and can affect many different groups in many different ways. 
+That's a fair point (though maybe your database software could use it too). We'll be spending some time here breaking down that statement into plain language. We'll provide a few examples of how this project relates to current trends, and can affect many different groups in many different ways. 
 
 ## There is No Such Thing As Ethical Buttplugging Under Open Source
 
@@ -35,14 +35,20 @@ So how do we deal with the fact that people can use Buttplug to connect sex toys
 
 That's where our mission statement comes in. It's the best line of defense we have. We'd rather state our beliefs, release the project, and hope good things come out of it while preparing for some not so good things. The other options include:
 
-- Get in an unwinnable arms race by somehow trying to restrict content.
+- Get in an unwinnable arms race by somehow trying to restrict content or growing the user license into an unenforcable behemoth.
 - Not release it at all, which means nothing happens, or worse, someone else creates something similar without a supporting structure, and people get hurt.
 
 This isn't a perfect solution, but it's something.
 
-## You Must Be This Tall To Code With This Library
+## You Must Be This Tall To Ride This Code
 
+Developing sex software isn't a practice with much best practices or documented history or even a community of developers willing to admit they'd do such a thing. While we hope to change all of those with this library, that's going to take time. In order to gain acceptance in larger software communities, we hope to share our code in public forums, such as Github. 
 
+These hopes have to be tempered by the issues of the general sterility of software, though. Github, StackOverflow, Glitch, and other community sites were not really made with NSFW content in mind. While there are certainly "adult" projects in github in the form of porn site scrapers, adult games, and other applications, it's still not the norm by any means. How you present your sex software project as the community grows could end up setting standards for how services deal with NSFW code projects in the future.
+
+Most of the code in Buttplug library isn't extremely explicit, but applications implementing Buttplug may be. Be careful with anything involving media assets that may be deemed inappropriate for certain age groups, especially on sites that don't allow search removal or age checking. Self hosting is always an option for projects involving sensitive materials.
+
+If you would like to use a project site for Buttplug work, and they don't have an obvious policy stating how they might feel about their site being used with sensitive materials, it may be in your best interest to contact them. If you don't feeling comfortable handling this yourself, feel free to [file an issue on the main Buttplug repo](https://github.com/buttplugio/buttplug/issues) and we'll be happy to reach out and discuss. The Core Buttplug Developer Team has communicated with services in the past to figure out best practices for hosting sensitive code content, and the outcomes are usually positively.
 
 ## Empathy for the User Having Sex With Your Software
 

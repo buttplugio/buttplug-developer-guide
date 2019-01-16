@@ -68,6 +68,5 @@ module.exports = {
     ["meta", {name:"twitter:description", content:"Manual for developing applications using the Buttplug Intimate Hardware Control Library."}],
     ["meta", {name:"twitter:image", content:"https://buttplug-developer-guide.docs.buttplug.io/buttplug-logo-opengraph.png"}],
     ["meta", {name:"twitter:creator", content:"@buttplugio"}],
-
   ]
 };
