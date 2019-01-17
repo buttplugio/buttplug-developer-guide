@@ -6,7 +6,7 @@
 
 ## First Draft!
 
-Note that this is a first draft of this section and I'm looking for feedback! You can leave feedback via [Twitter](https://twitter.com/qDot/status/1085724881214263296) or[on the feedback thread on our message boards](https://metafetish.club/t/feedback-on-ethics-portion-of-buttplug-developer-guide/546). Thanks for checking this out!
+Note that this is a first draft of this section and I'm looking for feedback! You can leave feedback via [Twitter](https://twitter.com/qDot/status/1085724881214263296) or [on the feedback thread on our message boards](https://metafetish.club/t/feedback-on-ethics-portion-of-buttplug-developer-guide/546). Thanks for checking this out!
 
 ## Wait This Doesn't Sound Technical
 
