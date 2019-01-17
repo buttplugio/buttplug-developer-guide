@@ -40,6 +40,8 @@ That's where our mission statement comes in. It's the best line of defense we ha
 
 This isn't a perfect solution, but it's something.
 
+When writing your own projects with Buttplug, you can and should express your own feelings about how you mean for your project to be used, as well as anything you may not want it used for. Statement of intent can make usage clearer for users, as well as provide context for what your plans are in building whatever it is you may build. This statement need not be static, it can grown and change with your project as you gain users and community. It can be as abstract as "for consentual, non-harmful sexual enjoyment by all", or as specific as whatever your interests may be.
+
 ## You Must Be This Tall To Ride This Code
 
 Developing sex software isn't a practice with much best practices or documented history or even a community of developers willing to admit they'd do such a thing. While we hope to change all of those with this library, that's going to take time. In order to gain acceptance in larger software communities, we hope to share our code in public forums, such as Github. 
@@ -49,6 +51,12 @@ These hopes have to be tempered by the issues of the general sterility of softwa
 Most of the code in Buttplug library isn't extremely explicit, but applications implementing Buttplug may be. Be careful with anything involving media assets that may be deemed inappropriate for certain age groups, especially on sites that don't allow search removal or age checking. Self hosting is always an option for projects involving sensitive materials.
 
 If you would like to use a project site for Buttplug work, and they don't have an obvious policy stating how they might feel about their site being used with sensitive materials, it may be in your best interest to contact them. If you don't feeling comfortable handling this yourself, feel free to [file an issue on the main Buttplug repo](https://github.com/buttplugio/buttplug/issues) and we'll be happy to reach out and discuss. The Core Buttplug Developer Team has communicated with services in the past to figure out best practices for hosting sensitive code content, and the outcomes are usually positively.
+
+Additionally, we highly recommend that any open source or community project using Buttplug should also have a Code of Conduct. While there have been many lively discussions on projects like databases and kernels adopting CoCs, there are some very concrete contextual reasons to have them for sex software projects. This rings especially true if it is a project that may involve some sort of generic, multiple-community/interest use.
+
+For instance, let's say someone is writing an audio player/movie player that controls sex toys with Buttplug. A massive variety of media could be fed into this application, and there is a good chance that media used by some users may be found offensive by others. These user groups will still need support, and may possibly be sharing the same issue/bug tracker for their needs. Having a CoC in place guides moderation of situations where interests may conflict.
+
+As for which CoC to use (if looking for a prewritten one), you can [check out ours](https://github.com/metafetish/metafetish-project-docs/blob/master/CODE_OF_CONDUCT.md) as an example. It's really just a slightly modified version of the [Contributor's Covenant](https://www.contributor-covenant.org/). Using stock CoC's on sex software projects can prove difficult due to rules about "appropriate wording", due to the sexually explicit context of the project itself. Addendums or rewording may be required, though we do recommend being cautious in how these are presented. We welcome discussion of these issues on [our message boards](https://metafetish.club).
 
 ## Empathy for the User Having Sex With Your Software
 
