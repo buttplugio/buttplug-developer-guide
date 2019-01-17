@@ -1,7 +1,8 @@
 # Buttplug Ethics
 
-> "&#x2026; Society has put a lot of evils in our brains that we need to transcend before we make out." - [Cex](https://youtu.be/ONi7QwYNQz4)
-
+> "&#x2026; Society has put a lot of evils in our brains that we need to transcend before we make out." 
+>
+> [Cex - Not Trying](https://youtu.be/ONi7QwYNQz4)
 
 ## Wait This Doesn't Sound Technical
 
@@ -60,3 +61,22 @@ As for which CoC to use (if looking for a prewritten one), you can [check out ou
 
 ## Empathy for the User Having Sex With Your Software
 
+When working on Buttplug applications, something that should be at the forefront of your design thinking is:
+
+> Someone is going to fuck this.
+
+The context of this usage should influence all levels of design, from UI/UX to low level code decisions. Assuming the user will approach a piece of software that involves Buttplug in the same way they would, say, a word processor, will end up in a fuckable word processor. If that's what you were aiming for, great, but otherwise this will just end up in a frustrated user.
+
+As you build projects using Buttplug, ask yourself questions that the user will encounter:
+
+- Could I use this while turned on?
+- If I'm REALLY turned on, how long does it take for me to go from "I wanna use this" to "I am using this"?
+- What happens if my hardware disconnects?
+- Do I have a quick way to stop whatever the hardware may be doing?
+- Can I control this while possibly covered in [lube or other things]?
+
+Since Buttplug programs are meant to be sexual, there's a good chance the user *won't* be considering these questions before embarking on whatever technical adventure you've implemented for them. Therefore it's your job to think about these issues first.
+
+## Mo' Buttplugs Mo' Problems
+
+This document does not cover nearly all of the ethical issues that can and will arise in sex software development. The best we can hope to accomplish here is a primer of ways of thinking developers need to consider when building any software, not just sex software or applications involving Buttplug. We'll be updating this section as we find new and interesting cases to present.
