@@ -4,6 +4,10 @@
 >
 > [Cex - Not Trying](https://youtu.be/ONi7QwYNQz4)
 
+## First Draft!
+
+Note that this is a first draft of this section and I'm looking for feedback! You can leave feedback via [Twitter](https://twitter.com/qDot/status/1085724881214263296) or[on the feedback thread on our message boards](https://metafetish.club/t/feedback-on-ethics-portion-of-buttplug-developer-guide/546). Thanks for checking this out!
+
 ## Wait This Doesn't Sound Technical
 
 One would normally expect something called a "Developer Guide" to mainly cover technical matters related to a certain technology a developer wants to use. While this document spends most of its words on that, we'd also like to start with a discussion of the ethics of writing and distributing free, open source software (FOSS) that deals with sex. Software ethics in general is an especially complex and difficult topic, and as Buttplug deals with sexual contexts, it cannot really stand apart from the human-focused portion of its use, unless computers somehow start fucking too.
