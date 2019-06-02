@@ -28,7 +28,7 @@ That's a fair point (though maybe your database software could use it too). We'l
 
 ## There is No Such Thing As Ethical Buttplugging Under Open Source
 
-Sex technology has, up until now, been mostly a "fire and forget" ordeal. Tech is either released by a commercial company alongside a product (to be forgotten if/when the product goes off the market), or thrown onto a message board as an attachment in a thread somewhere using psudonyms or anonymous accounts. 
+Sex technology has, up until now, been mostly a "fire and forget" ordeal. Tech is either released by a commercial company alongside a product (to be forgotten if/when the product goes off the market), or thrown onto a message board as an attachment in a thread somewhere using pseudonyms or anonymous accounts. 
 
 For Buttplug, we have real people using their real identities to release software, using professional, documented development practices. While we hope this gives the project a level of quality not normally seen in sex tech, it also means we can be seen as holding more responsibility for the outcomes of the software, as fingers can be pointed and questions asked to a known entity when something controversial happens.
 
@@ -45,13 +45,13 @@ That's where our mission statement comes in. It's the best line of defense we ha
 
 This isn't a perfect solution, but it's something.
 
-When writing your own projects with Buttplug, you can and should express your own feelings about how you mean for your project to be used, as well as anything you may not want it used for. Statement of intent can make usage clearer for users, as well as provide context for what your plans are in building whatever it is you may build. This statement need not be static, it can grown and change with your project as you gain users and community. It can be as abstract as "for consentual, non-harmful sexual enjoyment by all", or as specific as whatever your interests may be.
+When writing your own projects with Buttplug, you can and should express your own feelings about how you mean for your project to be used, as well as anything you may not want it used for. Statement of intent can make usage clearer for users, as well as provide context for what your plans are in building whatever it is you may build. This statement need not be static, it can grow n and change with your project as you gain users and community. It can be as abstract as "for consensual, non-harmful sexual enjoyment by all", or as specific as whatever your interests may be.
 
 ## You Must Be This Tall To Ride This Code
 
-Developing sex software isn't a practice with much best practices or documented history or even a community of developers willing to admit they'd do such a thing. While we hope to change all of those with this library, that's going to take time. In order to gain acceptance in larger software communities, we hope to share our code in public forums, such as Github. 
+Developing sex software isn't a practice with much best practices or documented history or even a community of developers willing to admit they'd do such a thing. While we hope to change all of those with this library, that's going to take time. In order to gain acceptance in larger software communities, we hope to share our code in public forums, such as GitHub. 
 
-These hopes have to be tempered by the issues of the general sterility of software, though. Github, StackOverflow, Glitch, and other community sites were not really made with NSFW content in mind. While there are certainly "adult" projects in github in the form of porn site scrapers, adult games, and other applications, it's still not the norm by any means. How you present your sex software project as the community grows could end up setting standards for how services deal with NSFW code projects in the future.
+These hopes have to be tempered by the issues of the general sterility of software, though. GitHub, StackOverflow, Glitch, and other community sites were not really made with NSFW content in mind. While there are certainly "adult" projects on GitHub in the form of porn site scrapers, adult games, and other applications, it's still not the norm by any means. How you present your sex software project as the community grows could end up setting standards for how services deal with NSFW code projects in the future.
 
 Most of the code in Buttplug library isn't extremely explicit, but applications implementing Buttplug may be. Be careful with anything involving media assets that may be deemed inappropriate for certain age groups, especially on sites that don't allow search removal or age checking. Self hosting is always an option for projects involving sensitive materials.
 
