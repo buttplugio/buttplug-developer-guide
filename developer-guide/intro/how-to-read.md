@@ -57,13 +57,13 @@ Here's a quick set of terms and definitions to be familiar with before continuin
 
 ## What to Read
 
-Obviously, reading the whole guide is best. A lot of work was put into writing this, and the best way to appreciate that work is the read and savor every single word.
+Obviously, reading the whole guide is best. A lot of work was put into writing this, and the best way to appreciate that work is to read and savor every single word.
 
 However, based on feedback, apparently readers have "other things to
 do". With that severe disrespect in mind, here's a list of what you'll
 learn from each of the sections in this guide.
 
-* **Intro**
+* **Flared Basics**
     * Well, you're reading it already, so that's a good start. The intro also contains a summary of just a few of the many, many ethics issues encountered when writing sex software, which is a good way to find out what you may be responsible for if you decide to work with the library. There's also an overview of what Buttplug architecture looks like that's pretty key to the rest of the guide. Everyone should read this whole section.
 * **Sticking Buttplug In**
     * All about the Client side of Buttplug. Useful for those wanting to build applications using prebuilt servers. If you just want to build a game, movie player, control app, or whatever, this is the chapter for you.
