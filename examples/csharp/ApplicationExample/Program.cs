@@ -1,6 +1,4 @@
-﻿using Buttplug.Client;
-using Buttplug.Core;
-using Buttplug.Core.Messages;
+﻿using Buttplug;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,17 +34,15 @@ namespace ApplicationExample
             // As usual, we start off with our connector setup. We really don't
             // need access to the connector this time, so we can just pass the
             // created connector directly to the client.
-            var client = new ButtplugClient("Example Client", 
-                new ButtplugEmbeddedConnector("Example Server"));
+            var client = new ButtplugClient("Example Client");
 
             // If you want to use a websocket client and talk to a websocket
             // server instead, uncomment the following line and comment the one
             // above out. Note you will need to turn off TLS/SSL on the server.
 
-            // var client = new ButtplugClient("Example Client", new
-            // ButtplugWebsocketConnector(new Uri("ws://localhost:12345/buttplug")));
+            // await client.Connect(new ButtplugWebsocketConnectorOptions(new Uri("ws://localhost:12345/buttplug")));
 
-            await client.ConnectAsync();
+            await client.Connect(new ButtplugEmbeddedConnectorOptions());
 
             // At this point, if you want to see everything that's happening,
             // uncomment this block to turn on logging. Warning, it might be
@@ -54,7 +50,7 @@ namespace ApplicationExample
 
             // void HandleLogMessage(object aObj, LogEventArgs aArgs) {
             // Console.WriteLine($"LOG: {aArgs.Message.LogMessage}"); }
-            // client.Log += HandleLogMessage; await client.RequestLogAsync(ButtplugLogLevel.Debug);
+            // client.Log += HandleLogMessage;
 
             // Now we scan for devices. Since we didn't add any Subtype Managers
             // yet, this will go out and find them for us. They'll be reported in
@@ -148,7 +144,9 @@ namespace ApplicationExample
                 // always have some option.
                 var commandTypes = device.AllowedMessages.Keys.Intersect(new[]
                 {
-                    typeof(VibrateCmd), typeof(RotateCmd), typeof(LinearCmd)
+                    ServerMessage.Types.MessageAttributeType.VibrateCmd,
+                    ServerMessage.Types.MessageAttributeType.RotateCmd,
+                    ServerMessage.Types.MessageAttributeType.LinearCmd,
                 }).ToArray();
 
                 Console.WriteLine("Choose an action:");
@@ -158,7 +156,7 @@ namespace ApplicationExample
                     // We know all device commands end in "Cmd", so we can cut
                     // off the last 3 characters and just have the action shown
                     // in our interface. Handy, if hacky.
-                    Console.WriteLine($"{i}. {command.Name.Substring(0, command.Name.Length - 3)}");
+                    Console.WriteLine($"{i}. {command.ToString().Substring(0, command.ToString().Length - 3)}");
                     ++i;
                 }
                 if (!uint.TryParse(Console.ReadLine(), out var cmdChoice) ||
@@ -183,7 +181,7 @@ namespace ApplicationExample
                 var cmdType = commandTypes[cmdChoice - 1];
 
                 // Pattern matching for switch blocks doesn't seem to work here. :(
-                if (cmdType == typeof(VibrateCmd))
+                if (cmdType == ServerMessage.Types.MessageAttributeType.VibrateCmd)
                 {
                     Console.WriteLine($"Vibrating all motors of {device.Name} at 50% for 1s.");
                     try
@@ -197,7 +195,7 @@ namespace ApplicationExample
                         Console.WriteLine("Device disconnected. Please try another device.");
                     }
                 }
-                else if (cmdType == typeof(RotateCmd))
+                else if (cmdType == ServerMessage.Types.MessageAttributeType.RotateCmd)
                 {
                     Console.WriteLine($"Rotating {device.Name} at 50% for 1s.");
                     try
@@ -211,7 +209,7 @@ namespace ApplicationExample
                         Console.WriteLine("Device disconnected. Please try another device.");
                     }
                 }
-                else if (cmdType == typeof(LinearCmd))
+                else if (cmdType == ServerMessage.Types.MessageAttributeType.LinearCmd)
                 {
                     Console.WriteLine($"Oscillating linear motors of {device.Name} from 20% to 80% over 3s");
                     try

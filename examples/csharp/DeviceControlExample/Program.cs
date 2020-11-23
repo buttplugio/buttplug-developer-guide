@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Buttplug.Client;
-using Buttplug.Core.Logging;
-using Buttplug.Core.Messages;
-using Buttplug.Test;
+using Buttplug;
 
 namespace DeviceControlExample
 {
@@ -21,23 +18,12 @@ namespace DeviceControlExample
 
         private static async Task RunExample()
         {
-            var connector = new ButtplugEmbeddedConnector("Example Server");
-            var client = new ButtplugClient("Example Client", connector);
-            var server = connector.Server;
-
-            // For this example, we'll use the Test device classes. These are
-            // included in Buttplug C# >= v0.3.3. They basically emulate how a
-            // regular device manager would work, exposing access to a Test
-            // Device which can take VibrateCmd messages. These basically exist
-            // as a way to test connection and setup UI without having to use
-            // actual hardware.
-            var testDevice = new TestDevice(new ButtplugLogManager(), 
-                "Test Device");
-            server.AddDeviceSubtypeManager(
-                aLogManager => new TestDeviceSubtypeManager(testDevice));
+            var connector = new ButtplugEmbeddedConnectorOptions();
+            var client = new ButtplugClient("Example Client");
+            
             try
             {
-                await client.ConnectAsync();
+                await client.Connect(connector);
             }
             catch (Exception ex)
             {
@@ -65,8 +51,8 @@ namespace DeviceControlExample
                 Console.WriteLine($"{device.Name} supports these messages:");
                 foreach (var msgInfo in device.AllowedMessages)
                 {
-                    Console.WriteLine($"- {msgInfo.Key.Name}");
-                    if (msgInfo.Value.FeatureCount != null)
+                    Console.WriteLine($"- {msgInfo.Key.ToString()}");
+                    if (msgInfo.Value.FeatureCount != 0)
                     {
                         Console.WriteLine($" - Features: {msgInfo.Value.FeatureCount}");
                     }
@@ -96,13 +82,13 @@ namespace DeviceControlExample
             // You can get the vibrator count using the following code, though we
             // know it's 2 so we don't really have to use it.
             var vibratorCount = 
-                testClientDevice.GetMessageAttributes<VibrateCmd>().FeatureCount;
+                testClientDevice.AllowedMessages[ServerMessage.Types.MessageAttributeType.VibrateCmd].FeatureCount;
             await testClientDevice.SendVibrateCmd(new[] { 1.0, 0.0 });
 
             await WaitForKey();
 
             // And now we disconnect as usual.
-            await client.DisconnectAsync();
+            await client.Disconnect();
 
             // If we try to send a command to a device after the client has
             // disconnected, we'll get an exception thrown.
@@ -110,7 +96,7 @@ namespace DeviceControlExample
             {
                 await testClientDevice.SendVibrateCmd(1.0);
             }
-            catch (ButtplugClientConnectorException e)
+            catch (ButtplugConnectorException e)
             {
                 Console.WriteLine("Tried to send after disconnection! Exception: ");
                 Console.WriteLine(e);

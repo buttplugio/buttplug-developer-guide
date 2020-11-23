@@ -11,6 +11,7 @@ module.exports = {
           "/intro/introduction.md",
           "/intro/how-to-read.md",
           "/intro/buttplug-ethics.md",
+          "/intro/getting-help.md"
         ]
       },
       {
@@ -25,7 +26,6 @@ module.exports = {
           "/architecture/terms.md"
         ]
       },
-      /*
       {
         title: "Sticking Buttplug In",
         collapsable: true,
@@ -34,12 +34,13 @@ module.exports = {
           "/writing-buttplug-applications/api-basics.md",
           "/writing-buttplug-applications/connectors.md",
           "/writing-buttplug-applications/connecting.md",
-          "/writing-buttplug-applications/logging.md",
           "/writing-buttplug-applications/device-enum.md",
           "/writing-buttplug-applications/device-control.md",
           "/writing-buttplug-applications/application.md",
+          "/writing-buttplug-applications/logging.md",
         ]
       },
+      /*
       {
         title: "Winning Ways For Your Buttplug Plays",
         collapsable: true,

@@ -1,19 +1,34 @@
 # API Basics
 
-Most of the Client Reference Implementations are built to look as similar as possible. However, there may be instances where language options (i.e. existence of things like first-class events) change the API slightly. This section goes over how the client APIs we've provided work in a generic manner. Note that these are not a standard, more just the way the Buttplug Core Team have chosen to do things. If you'd like to implement your own client in your own way, *go nuts*.
+Most of the Client Reference Implementations are built to look as similar as possible. However, there may be instances where language options (i.e. existence of things like first-class events) change the API slightly. This section goes over how the client APIs we've provided work in a generic manner.
+
+## Buttplug Session Overview
+
+Let's review what a Buttplug Sessions are made up of. Some of this was covered in depth in the architecture section, but is here for review, and also now includes code.
+
+Buttplug sessions (the connection lifetime between the client and server) generally consist of the following steps. These steps are stated from the perspective of the Client API.
+
+- Setting up a connection via a Connector class/object
+- Connecting to the Server
+- Server Handshake and Device List Update
+- Device Scanning
+- Device Control
+- Disconnecting from the Server
+
+This covers most of the functionality that Buttplug provides. Within these steps, there is always the chance for errors or unexpected behavior, so error handling and log messages are also covered here.
 
 ## Client/Server Interaction
 
 There are two types of communication between the client and the server:
 
-- Symmetric (Client -> Server -> Client)
+- Request/Response (Client -> Server -> Client)
     - Client sends a message, server replies. For instance, when a device command is sent from the client, the server will return information afterward saying whether or not that command succeeded.
-- Asymmetric (Server -> Client)
+- Events (Server -> Client)
     - Server sends a message to the client with no expectation of response. For instance, when a new device connects to the server, the server will tell the client the device has been added, but the server doesn't expect the client to acknowledge this. These messages are considered fire and forget.
 
-Symmetric interaction between the client and the server may be a very, very long process. Sometimes 100s of milliseconds, sometimes possibly even multiple seconds if device connections are very poor. Client APIs try to deal with this via usage of Async/Await, assuming this capability is available in the language you have chosen to use.
+Request/Response interaction between the client and the server may be a very, very long process. Sometimes 100s of milliseconds, sometimes possibly even multiple seconds if device connections are very poor. Client APIs try to deal with this via usage of Async/Await, assuming this capability is available in the language you have chosen to use.
 
-For Asymmetric messages, first-class events are used, where possible (i.e. Javascript, C#). Otherwise, callbacks, Promises, or Futures are used depending on library capabilities. (i.e. python, C/C++, Rust).
+For event messages, first-class events are used, where possible. Otherwise, callbacks, promises, streams, or other methods are used depending on language and library capabilities.
 
 <CodeSwitcher :languages="{rust:'Rust', csharp:'C#', ts:'TypeScript', js:'JS', twine: 'Twine (Sugarcube)'}">
 <template v-slot:rust>
@@ -23,7 +38,10 @@ For Asymmetric messages, first-class events are used, where possible (i.e. Javas
 </template>
 <template v-slot:csharp>
 
-<<< @/examples/csharp/AsyncExample/Program.csharp
+[See it on Github](https://github.com/buttplugio/buttplug-developer-guide/tree/master/examples/csharp/AsyncExample)
+
+<<< @/examples/csharp/AsyncExample/Program.cs
+
 
 </template>
 <template v-slot:js>
@@ -45,7 +63,9 @@ For Asymmetric messages, first-class events are used, where possible (i.e. Javas
 
 ## Dealing With Errors
 
-As with all technology, things in Buttplug can and often will go wrong. As stated in the ethics section, due to the context of Buttplug, the user may be having sex with/via an application when things go wrong. This means things can go very, very wrong. 
+As with all technology, things in Buttplug can and often will go wrong. Due to the context of Buttplug, the user may be having sex with/via an application when things go wrong.
+
+This means things can go very, very wrong. 
 
 With that in mind, errors are covered before anything else.
 
@@ -62,8 +82,7 @@ Errors in live Buttplug sessions come in the following flavors.
 * *Unknown*
     * Reserved for instances where a newer server version is talking to an older client version, and may have error types that would not be recognized by the older client. See next section for more info on this.
 
-The above types only apply to clients that have connected to a server. Custom exceptions or errors may also be thrown by library implementations of Buttplug. For instance, a Connector may throw a custom error or exception based on the type of transport it is using. For more information, see the documentation of the specific Buttplug implementation you are using. 
-
+Custom exceptions or errors may also be thrown by implementations of Buttplug. For instance, a Connector may throw a custom error or exception based on the type of transport it is using. For more information, see the documentation of the specific Buttplug implementation you are using.
 
 <CodeSwitcher :languages="{rust:'Rust', csharp:'C#', ts:'TypeScript', js:'JS', twine: 'Twine (Sugarcube)'}">
 <template v-slot:rust>
@@ -73,7 +92,7 @@ The above types only apply to clients that have connected to a server. Custom ex
 </template>
 <template v-slot:csharp>
 
-<<< @/examples/csharp/ExceptionExample/Program.csharp
+<<< @/examples/csharp/ExceptionExample/Program.cs
 
 </template>
 <template v-slot:js>

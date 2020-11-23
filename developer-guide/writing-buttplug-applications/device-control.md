@@ -31,7 +31,7 @@ As a user of a Buttplug Client API, you should never be expected to send raw But
 </template>
 <template v-slot:csharp>
 
-<<< @/examples/csharp/DeviceControlExample/Program.csharp
+<<< @/examples/csharp/DeviceControlExample/Program.cs
 
 </template>
 <template v-slot:js>

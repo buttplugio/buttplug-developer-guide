@@ -19,7 +19,7 @@ While most interaction will Buttplug will usually be more complicated or context
 </template>
 <template v-slot:csharp>
 
-<<< @/examples/csharp/ApplicationExample/Program.csharp
+<<< @/examples/csharp/ApplicationExample/Program.cs
 
 </template>
 <template v-slot:js>

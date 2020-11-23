@@ -1,27 +1,11 @@
-﻿using Buttplug.Client;
+﻿using Buttplug;
 using System;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace PingTimeoutExample
 {
     internal class Program
     {
-        // Dummy client class that ignores ping timing, just used here for show.
-        private class ButtplugNoPingTestClient : ButtplugClient
-        {
-            public ButtplugNoPingTestClient(IButtplugClientConnector aConnector)
-                : base("TestClient", aConnector)
-            {
-            }
-
-            public void StopPingTimer()
-            {
-                // Run connection, then just get rid of the ping timer.
-                _pingTimer.Change(Timeout.Infinite, 100);
-            }
-        }
-
         private static async Task WaitForKey()
         {
             Console.WriteLine("Press any key to continue.");
@@ -42,8 +26,9 @@ namespace PingTimeoutExample
             // include a maximum ping timeout of 100ms. This is a fairly short
             // timer, but since everything is running in our current process, it
             // should be fine.
-            var connector = new ButtplugEmbeddedConnector("Example Server", 100);
-            var client = new ButtplugNoPingTestClient(connector);
+            var connector = new ButtplugEmbeddedConnectorOptions();
+            connector.MaxPingTime = 100;
+            var client = new ButtplugClient("Example Client");
 
             // Just because the Client takes care of sending the ping message for
             // you doesn't mean that a connection is always perfect. It could be
@@ -57,7 +42,7 @@ namespace PingTimeoutExample
                 Console.WriteLine("Buttplug disconnected!");
 
             // Let's go ahead and connect.
-            await client.ConnectAsync();
+            await client.Connect(connector);
             Console.WriteLine("Client connected");
             
             // If you'd like more information on what's going on, uncomment these 2 lines.
@@ -74,7 +59,6 @@ namespace PingTimeoutExample
             // Now we'll kill the timer. You should see both a ping timeout and a
             // disconnected message from the event handlers we set up above.
             Console.WriteLine("Stopping ping timer");
-            client.StopPingTimer();
             await WaitForKey();
 
             // At this point we should already be disconnected, so we'll just

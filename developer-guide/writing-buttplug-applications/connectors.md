@@ -33,7 +33,7 @@ This process is outlined in the code example below.
 </template>
 <template v-slot:csharp>
 
-<<< @/examples/csharp/EmbeddedConnectorExample/Program.csharp
+<<< @/examples/csharp/EmbeddedConnectorExample/Program.cs
 
 </template>
 <template v-slot:js>
@@ -71,7 +71,7 @@ For using external servers, such as Websocket or IPC Servers, the process is muc
 </template>
 <template v-slot:csharp>
 
-<<< @/examples/csharp/RemoteConnectorExample/Program.csharp
+<<< @/examples/csharp/RemoteConnectorExample/Program.cs
 
 </template>
 <template v-slot:js>

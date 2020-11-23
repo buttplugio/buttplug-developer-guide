@@ -15,7 +15,7 @@ As all connector setup was done via the Connector setup, this is now just down t
 </template>
 <template v-slot:csharp>
 
-<<< @/examples/csharp/ConnectionExample/Program.csharp
+<<< @/examples/csharp/ConnectionExample/Program.cs
 
 </template>
 <template v-slot:js>
@@ -71,7 +71,7 @@ On ping failure in the client APIs, you should either receive some sort of event
 </template>
 <template v-slot:csharp>
 
-<<< @/examples/csharp/PingTimeoutExample/Program.csharp
+<<< @/examples/csharp/PingTimeoutExample/Program.cs
 
 </template>
 <template v-slot:js>

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Buttplug.Client;
+using Buttplug;
 
 namespace DeviceEnumerationExample
 {
@@ -18,11 +18,8 @@ namespace DeviceEnumerationExample
 
         private static async Task RunExample()
         {
-            // Usual embedded connector setup. We'll assume the server found all
-            // of the subtype managers for us (there are multiple referenced in
-            // this project).
-            var connector = new ButtplugEmbeddedConnector("Example Server");
-            var client = new ButtplugClient("Example Client", connector);
+            // Usual embedded connector setup.
+            var client = new ButtplugClient("Example Client");
            
             // Set up our DeviceAdded/DeviceRemoved event handlers before connecting.
             client.DeviceAdded += (aObj, aDeviceEventArgs) =>
@@ -34,7 +31,7 @@ namespace DeviceEnumerationExample
             // Now that everything is set up, we can connect.
             try
             {
-                await client.ConnectAsync();
+                await client.Connect(new ButtplugEmbeddedConnectorOptions());
             }
             catch (Exception ex)
             {
@@ -80,7 +77,7 @@ namespace DeviceEnumerationExample
             await WaitForKey();
 
             // And now we disconnect as usual.
-            await client.DisconnectAsync();
+            await client.Disconnect();
         }
 
         private static void Main()

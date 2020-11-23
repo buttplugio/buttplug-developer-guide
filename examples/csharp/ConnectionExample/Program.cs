@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Buttplug.Client;
-using Buttplug.Client.Connectors.WebsocketConnector;
-using Buttplug.Core;
+using Buttplug;
 
 namespace ConnectionExample
 {
@@ -24,7 +22,7 @@ namespace ConnectionExample
         {
             // After you've created a connector, the connection looks the same no
             // matter what, though the errors thrown may be different.
-            var connector = new ButtplugEmbeddedConnector("Example Server");
+            var connector = new ButtplugEmbeddedConnectorOptions();
 
             // If you'd like to try a remote network connection, comment the
             // connector line above and uncomment the one below. Note that you'll
@@ -33,7 +31,7 @@ namespace ConnectionExample
             // var connector = new ButtplugWebsocketConnector(
             //   new Uri("ws://localhost:12345/buttplug"));
 
-            var client = new ButtplugClient("Example Client", connector);
+            var client = new ButtplugClient("Example Client");
 
             // Now we connect. If anything goes wrong here, we'll either throw
             //
@@ -44,9 +42,9 @@ namespace ConnectionExample
             //   mismatch.
             try
             {
-                await client.ConnectAsync();
+                await client.Connect(connector);
             }
-            catch (ButtplugClientConnectorException ex)
+            catch (ButtplugConnectorException ex)
             {
                 // If our connection failed, because the server wasn't turned on,
                 // SSL/TLS wasn't turned off, etc, we'll just print and exit
@@ -79,7 +77,7 @@ namespace ConnectionExample
             await WaitForKey();
 
             // And now we disconnect as usual
-            await client.DisconnectAsync();
+            await client.Disconnect();
         }
 
         private static void Main()

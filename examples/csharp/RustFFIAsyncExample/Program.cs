@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Buttplug.Client;
-using Buttplug.Client.Connectors.WebsocketConnector;
 using Buttplug.Core;
 
 namespace AsyncExample
@@ -23,9 +22,9 @@ namespace AsyncExample
             // For now, you can ignore the API calls here, since we're just
             // talking about how our API works in general. Setting up a
             // connection is discussed more in the Connecting section of this document.
-            var connector = 
+            var connector =
                 new ButtplugWebsocketConnector(new Uri("ws://localhost:12345/buttplug"));
-            var client = 
+            var client =
                 new ButtplugClient("Example Client", connector);
 
             // As an example of async messages, we'll assume the server might

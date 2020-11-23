@@ -38,7 +38,7 @@ Here's some examples of how device enumeration works in different implementation
 </template>
 <template v-slot:csharp>
 
-<<< @/examples/csharp/DeviceEnumerationExample/Program.csharp
+<<< @/examples/csharp/DeviceEnumerationExample/Program.cs
 
 </template>
 <template v-slot:js>
