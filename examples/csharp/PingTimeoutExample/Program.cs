@@ -42,7 +42,7 @@ namespace PingTimeoutExample
                 Console.WriteLine("Buttplug disconnected!");
 
             // Let's go ahead and connect.
-            await client.Connect(connector);
+            await client.ConnectAsync(connector);
             Console.WriteLine("Client connected");
             
             // If you'd like more information on what's going on, uncomment these 2 lines.

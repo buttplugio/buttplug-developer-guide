@@ -23,7 +23,7 @@ namespace DeviceControlExample
             
             try
             {
-                await client.Connect(connector);
+                await client.ConnectAsync(connector);
             }
             catch (Exception ex)
             {
@@ -88,7 +88,7 @@ namespace DeviceControlExample
             await WaitForKey();
 
             // And now we disconnect as usual.
-            await client.Disconnect();
+            await client.DisconnectAsync();
 
             // If we try to send a command to a device after the client has
             // disconnected, we'll get an exception thrown.

@@ -23,7 +23,7 @@ namespace AsyncExample
             // connection is discussed more in the Connecting section of this
             // document.
             var connector = 
-                new ButtplugWebsocketConnectorOptions(new Uri("ws://localhost:12345/buttplug").ToString());
+                new ButtplugWebsocketConnectorOptions(new Uri("ws://localhost:12345/buttplug"));
             var client = 
                 new ButtplugClient("Example Client");
 
@@ -41,7 +41,7 @@ namespace AsyncExample
             // If something goes wrong, we throw, which breaks out of the await.
             try
             {
-                await client.Connect(connector);
+                await client.ConnectAsync(connector);
             }
             catch (ButtplugConnectorException ex)
             {

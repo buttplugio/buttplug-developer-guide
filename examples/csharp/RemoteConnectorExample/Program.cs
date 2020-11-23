@@ -12,9 +12,9 @@ namespace RemoteConnectorExample
             // Client.Connectors.WebsocketConnector package from nuget and
             // passing a websocket address to it.
             var connector = new ButtplugWebsocketConnectorOptions(
-                new Uri("ws://localhost:12345/buttplug").ToString());
+                new Uri("ws://localhost:12345/buttplug"));
             var client = new ButtplugClient("Example Client");
-            await client.Connect(connector);
+            await client.ConnectAsync(connector);
         }
 
         static void Main(string[] args)

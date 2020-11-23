@@ -18,7 +18,7 @@ namespace EmbeddedConnectorExample
             var client = new ButtplugClient("Example Client");
 
             // Connecting using an embedded connection should never fail.
-            await client.Connect(connector);
+            await client.ConnectAsync(connector);
         }
 
         private static void Main()

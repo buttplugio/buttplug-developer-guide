@@ -42,7 +42,7 @@ namespace ApplicationExample
 
             // await client.Connect(new ButtplugWebsocketConnectorOptions(new Uri("ws://localhost:12345/buttplug")));
 
-            await client.Connect(new ButtplugEmbeddedConnectorOptions());
+            await client.ConnectAsync(new ButtplugEmbeddedConnectorOptions());
 
             // At this point, if you want to see everything that's happening,
             // uncomment this block to turn on logging. Warning, it might be

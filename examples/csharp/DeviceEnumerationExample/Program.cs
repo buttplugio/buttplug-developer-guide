@@ -31,7 +31,7 @@ namespace DeviceEnumerationExample
             // Now that everything is set up, we can connect.
             try
             {
-                await client.Connect(new ButtplugEmbeddedConnectorOptions());
+                await client.ConnectAsync(new ButtplugEmbeddedConnectorOptions());
             }
             catch (Exception ex)
             {
@@ -77,7 +77,7 @@ namespace DeviceEnumerationExample
             await WaitForKey();
 
             // And now we disconnect as usual.
-            await client.Disconnect();
+            await client.DisconnectAsync();
         }
 
         private static void Main()

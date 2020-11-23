@@ -42,7 +42,7 @@ namespace ConnectionExample
             //   mismatch.
             try
             {
-                await client.Connect(connector);
+                await client.ConnectAsync(connector);
             }
             catch (ButtplugConnectorException ex)
             {
@@ -77,7 +77,7 @@ namespace ConnectionExample
             await WaitForKey();
 
             // And now we disconnect as usual
-            await client.Disconnect();
+            await client.DisconnectAsync();
         }
 
         private static void Main()
