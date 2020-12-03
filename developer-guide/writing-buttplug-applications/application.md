@@ -9,7 +9,7 @@ Now that we've covered most of the basics of Buttplug, here's an example of a si
 
 While most interaction will Buttplug will usually be more complicated or context specific than this, this example ties together all of the components of the client into a simple program.
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', ts:'TypeScript', js:'JS', twine: 'Twine (Sugarcube)'}">
+<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', ts:'TypeScript', js:'JS'}">
 <template v-slot:rust>
 
 ```rust
@@ -32,13 +32,6 @@ While most interaction will Buttplug will usually be more complicated or context
 <template v-slot:ts>
 
 <<< @/examples/typescript/src/errors-example.ts
-
-</template>
-<template v-slot:twine>
-
-```html
-<!-- Need to write the Twine error handling example. -->
-```
 
 </template>
 </CodeSwitcher>

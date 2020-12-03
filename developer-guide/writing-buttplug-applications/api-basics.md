@@ -1,21 +1,20 @@
 # API Basics
 
-Most of the Client Reference Implementations are built to look as similar as possible. However, there may be instances where language options (i.e. existence of things like first-class events) change the API slightly. This section goes over how the client APIs we've provided work in a generic manner.
+Client implementations in Buttplug are built to look as similar as possible no matter what language you're using. However, there may be instances where language options (i.e. existence of things like first-class events) change the API slightly. This section goes over how the client APIs we've provided work in a generic manner.
 
 ## Buttplug Session Overview
 
-Let's review what a Buttplug Sessions are made up of. Some of this was covered in depth in the architecture section, but is here for review, and also now includes code.
+Let's review what a Buttplug Sessions are made up of. Some of this was covered in depth in the architecture section, so this will just be an overview, while also including some example code.
 
-Buttplug sessions (the connection lifetime between the client and server) generally consist of the following steps. These steps are stated from the perspective of the Client API.
+Buttplug sessions (the connection lifetime between the client and server) consist of the following steps.
 
-- Setting up a connection via a Connector class/object
-- Connecting to the Server
-- Server Handshake and Device List Update
-- Device Scanning
-- Device Control
-- Disconnecting from the Server
-
-This covers most of the functionality that Buttplug provides. Within these steps, there is always the chance for errors or unexpected behavior, so error handling and log messages are also covered here.
+- Application sets up a connection via a Connector class/object and creates a Client
+- Client connects to the Server
+- Client negotiates Server Handshake and Device List Update
+- Application uses Client to request Device Scanning
+- Server communicates Device Connection events to Client/Application.
+- Application uses Device Instances to control hardware in Server
+- At some point, Application/Client disconnects from the Server
 
 ## Client/Server Interaction
 
@@ -26,7 +25,7 @@ There are two types of communication between the client and the server:
 - Events (Server -> Client)
     - Server sends a message to the client with no expectation of response. For instance, when a new device connects to the server, the server will tell the client the device has been added, but the server doesn't expect the client to acknowledge this. These messages are considered fire and forget.
 
-Request/Response interaction between the client and the server may be a very, very long process. Sometimes 100s of milliseconds, sometimes possibly even multiple seconds if device connections are very poor. Client APIs try to deal with this via usage of Async/Await, assuming this capability is available in the language you have chosen to use.
+Request/Response interaction between the client and the server may be a very long process. Sometimes 100s of milliseconds, or even multiple seconds if device connection quality is poor. In languages where it is available, Client APIs try to deal with this via usage of Async/Await.
 
 For event messages, first-class events are used, where possible. Otherwise, callbacks, promises, streams, or other methods are used depending on language and library capabilities.
 
@@ -67,9 +66,9 @@ As with all technology, things in Buttplug can and often will go wrong. Due to t
 
 This means things can go very, very wrong. 
 
-With that in mind, errors are covered before anything else.
+With that in mind, errors are covered before providing information on how to use things, in the overly optimistic hopes that developers will keep error handling in mind when creating their applications.
 
-Errors in live Buttplug sessions come in the following flavors.
+Errors in Buttplug sessions come in the follow classes:
 
 * *Handshake*
     * Client and Server connected successfully, but something went wrong when they were negotiating the session. This could include naming problems, schema compatibility issues (see next section), or other problems.
@@ -84,7 +83,7 @@ Errors in live Buttplug sessions come in the following flavors.
 
 Custom exceptions or errors may also be thrown by implementations of Buttplug. For instance, a Connector may throw a custom error or exception based on the type of transport it is using. For more information, see the documentation of the specific Buttplug implementation you are using.
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', ts:'TypeScript', js:'JS', twine: 'Twine (Sugarcube)'}">
+<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', ts:'TypeScript', js:'JS'}">
 <template v-slot:rust>
 
 <<< @/examples/rust/src/bin/errors.rs
@@ -103,13 +102,6 @@ Custom exceptions or errors may also be thrown by implementations of Buttplug. F
 <template v-slot:ts>
 
 <<< @/examples/typescript/src/errors-example.ts
-
-</template>
-<template v-slot:twine>
-
-```html
-Still need to write the Twine error handling example.
-```
 
 </template>
 </CodeSwitcher>
