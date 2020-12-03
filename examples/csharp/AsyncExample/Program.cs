@@ -23,7 +23,8 @@ namespace AsyncExample
             // connection is discussed more in the Connecting section of this
             // document.
             var connector = 
-                new ButtplugWebsocketConnectorOptions(new Uri("ws://localhost:12345/buttplug"));
+                new ButtplugWebsocketConnectorOptions(
+                    new Uri("ws://localhost:12345/buttplug"));
             var client = 
                 new ButtplugClient("Example Client");
 

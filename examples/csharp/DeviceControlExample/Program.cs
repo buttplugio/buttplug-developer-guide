@@ -81,8 +81,14 @@ namespace DeviceControlExample
             //
             // You can get the vibrator count using the following code, though we
             // know it's 2 so we don't really have to use it.
+            //
+            // This vibrateType variable is just used to keep us under 80 
+            // characters for the dev guide, so don't feel that you have to reassign 
+            // types like this. I'm just trying to make it so you don't have to
+            // horizontally scroll in the manual. :)
+            var vibrateType = ServerMessage.Types.MessageAttributeType.VibrateCmd;
             var vibratorCount = 
-                testClientDevice.AllowedMessages[ServerMessage.Types.MessageAttributeType.VibrateCmd].FeatureCount;
+                testClientDevice.AllowedMessages[vibrateType].FeatureCount;
             await testClientDevice.SendVibrateCmd(new[] { 1.0, 0.0 });
 
             await WaitForKey();

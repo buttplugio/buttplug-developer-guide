@@ -40,7 +40,8 @@ namespace ApplicationExample
             // server instead, uncomment the following line and comment the one
             // above out. Note you will need to turn off TLS/SSL on the server.
 
-            // await client.Connect(new ButtplugWebsocketConnectorOptions(new Uri("ws://localhost:12345/buttplug")));
+            //await client.Connect(new ButtplugWebsocketConnectorOptions(
+            //    new Uri("ws://localhost:12345/buttplug")));
 
             await client.ConnectAsync(new ButtplugEmbeddedConnectorOptions());
 
@@ -156,7 +157,10 @@ namespace ApplicationExample
                     // We know all device commands end in "Cmd", so we can cut
                     // off the last 3 characters and just have the action shown
                     // in our interface. Handy, if hacky.
-                    Console.WriteLine($"{i}. {command.ToString().Substring(0, command.ToString().Length - 3)}");
+                    var cmdVerb = command
+                        .ToString()
+                        .Substring(0, command.ToString().Length - 3);
+                    Console.WriteLine($"{i}. {cmdVerb}");
                     ++i;
                 }
                 if (!uint.TryParse(Console.ReadLine(), out var cmdChoice) ||
@@ -183,7 +187,8 @@ namespace ApplicationExample
                 // Pattern matching for switch blocks doesn't seem to work here. :(
                 if (cmdType == ServerMessage.Types.MessageAttributeType.VibrateCmd)
                 {
-                    Console.WriteLine($"Vibrating all motors of {device.Name} at 50% for 1s.");
+                    Console.WriteLine(
+                        $"Vibrating all motors of {device.Name} at 50% for 1s.");
                     try
                     {
                         await device.SendVibrateCmd(0.5);
@@ -211,7 +216,8 @@ namespace ApplicationExample
                 }
                 else if (cmdType == ServerMessage.Types.MessageAttributeType.LinearCmd)
                 {
-                    Console.WriteLine($"Oscillating linear motors of {device.Name} from 20% to 80% over 3s");
+                    Console.WriteLine(
+                        $"Oscillating linear motors of {device.Name} from 20% to 80% over 3s");
                     try
                     {
                         await device.SendLinearCmd(1000, 0.2);
@@ -233,7 +239,10 @@ namespace ApplicationExample
             // on earlier or whatever), run a command on a device, or just quit.
             while (true)
             {
-                Console.WriteLine("1. Scan For More Devices\n2. Control Devices\n3. Quit\nChoose an option: ");
+                Console.WriteLine("1. Scan For More Devices");
+                Console.WriteLine("2. Control Devices");
+                Console.WriteLine("3. Quit");
+                Console.WriteLine("Choose an option: ");
                 if (!uint.TryParse(Console.ReadLine(), out var choice) ||
                     (choice == 0 || choice > 3))
                 {

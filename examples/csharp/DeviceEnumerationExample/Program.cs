@@ -41,11 +41,6 @@ namespace DeviceEnumerationExample
                 return;
             }
 
-            // If you'd like more information on what's going on, uncomment these 2 lines.
-
-            // client.Log += (aObj, aMsg) => Console.WriteLine(aMsg.Message.LogMessage);
-            // await client.RequestLogAsync(ButtplugLogLevel.Debug);
-
             // We're connected, yay!
             Console.WriteLine("Connected!");
 

@@ -64,13 +64,6 @@ namespace ConnectionExample
                 return;
             }
 
-            // If you'd like more information on what's going on, uncomment these
-            // 2 lines. There won't be too much in this example since all we're
-            // doing is connecting.
-
-            // client.Log += (aObj, aMsg) => Console.WriteLine(aMsg.Message.LogMessage);
-            // await client.RequestLogAsync(ButtplugLogLevel.Debug);
-
             // We're connected, yay!
             Console.WriteLine("Connected! Check Server for Client Name.");
 
