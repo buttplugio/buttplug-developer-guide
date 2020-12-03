@@ -94,16 +94,6 @@ Custom exceptions or errors may also be thrown by implementations of Buttplug. F
 <<< @/examples/csharp/ExceptionExample/Program.cs
 
 </template>
-<template v-slot:js>
-
-<<< @/examples/javascript/errors-example.js
-
-</template>
-<template v-slot:ts>
-
-<<< @/examples/typescript/src/errors-example.ts
-
-</template>
 </CodeSwitcher>
 
 **NOTE:** You may notice that there's no way to tell exactly what an error is from this message. You get a class, but the information itself is encoded in the message, which is not standardized. Therefore it's impossible to tell whether a device disconnected, or you just send a connected device an incorrect message. This is bad, and [will hopefully be fixed at some point in the future](https://github.com/buttplugio/buttplug/issues/70).

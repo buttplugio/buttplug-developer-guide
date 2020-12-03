@@ -9,7 +9,7 @@ Now that we've covered most of the basics of Buttplug, here's an example of a si
 
 While most interaction will Buttplug will usually be more complicated or context specific than this, this example ties together all of the components of the client into a simple program.
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', ts:'TypeScript', js:'JS'}">
+<CodeSwitcher :languages="{rust:'Rust', csharp:'C#'}">
 <template v-slot:rust>
 
 ```rust
@@ -20,18 +20,6 @@ While most interaction will Buttplug will usually be more complicated or context
 <template v-slot:csharp>
 
 <<< @/examples/csharp/ApplicationExample/Program.cs
-
-</template>
-<template v-slot:js>
-
-```js
-// Need to write this example
-```
-
-</template>
-<template v-slot:ts>
-
-<<< @/examples/typescript/src/errors-example.ts
 
 </template>
 </CodeSwitcher>
