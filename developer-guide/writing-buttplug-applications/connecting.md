@@ -7,7 +7,7 @@ As all connector setup was done via the Connector setup, this is now just down t
 - For embedded connectors in the reference implementation, connection will always succeed, as long as the client and server are from the same library version (See below for issues involving compatibility). Hopefully, that is a situation that will rarely if ever happen.
 - For external connectors, connections can fail due to usual connection issues (wrong address, server not up, network not on, etc...). There is also a chance that the client and server could have a version mismatch. We'll cover this in the next section.
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#'}">
+<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', js:'Javascript'}">
 <template v-slot:rust>
 
 <<< @/examples/rust/src/bin/connection.rs
@@ -16,6 +16,11 @@ As all connector setup was done via the Connector setup, this is now just down t
 <template v-slot:csharp>
 
 <<< @/examples/csharp/ConnectionExample/Program.cs
+
+</template>
+<template v-slot:js>
+
+<<< @/examples/javascript/remote-connector-example.js
 
 </template>
 </CodeSwitcher>

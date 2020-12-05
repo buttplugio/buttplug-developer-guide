@@ -21,7 +21,7 @@ There's not really much to cover about the first two problems, they're just part
 
 This process is outlined in the code example below.
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', ts:'TypeScript', js:'JS'}">
+<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', js:'Javascript'}">
 <template v-slot:rust>
 
 <<< @/examples/rust/src/bin/embedded_connector.rs
@@ -34,16 +34,7 @@ This process is outlined in the code example below.
 </template>
 <template v-slot:js>
 
-```js
-// Need to write this example
-```
-
-</template>
-<template v-slot:ts>
-
-```ts
-// Need to write this example
-```
+<<< @/examples/javascript/embedded-connector-example.js
 
 </template>
 </CodeSwitcher>
@@ -52,7 +43,7 @@ This process is outlined in the code example below.
 
 For using external servers, such as Websocket or IPC Servers, the process is slightly different. You'll need to provide the user a way to pass in the server address, then you just create the connector object using that address.
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#'}">
+<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', js:'Javascript'}">
 <template v-slot:rust>
 
 <<< @/examples/rust/src/bin/external_connector.rs
@@ -61,6 +52,11 @@ For using external servers, such as Websocket or IPC Servers, the process is sli
 <template v-slot:csharp>
 
 <<< @/examples/csharp/RemoteConnectorExample/Program.cs
+
+</template>
+<template v-slot:js>
+
+<<< @/examples/javascript/remote-connector-example.js
 
 </template>
 </CodeSwitcher>

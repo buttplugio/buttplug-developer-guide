@@ -10,7 +10,7 @@ This guide should be considered **a way** to do things, but not **the (only) way
 
 Chapters involving code will have interfaces similar to the one shown here. Changing the language choice on any example will change it on all examples in the project, so you can read using whatever language you're comfortable with.
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', python:'Python', ts:'TypeScript', js:'JS', twine: 'Twine (Sugarcube)'}">
+<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', js:'Javascript'}">
 <template v-slot:rust>
 
 ```rust
@@ -27,36 +27,16 @@ var a = 1 + 2;
 ```
 
 </template>
-<template v-slot:python>
-
-```python
-# This is some python
-a = 1 + 2
-```
-
-</template>
 <template v-slot:js>
 
 ```js
+// For most of the examples in this guide, Javascript and Typescript will look mostly the
+// same (we don't use Typescript specific features in our WASM implementation), therefore we only
+// include javascript examples. Typescript typings files are distributed with the library, so you
+// should still get type completions in your IDE.
+
 // This is some Javascript
 let a = 1 + 2;
-```
-
-</template>
-<template v-slot:ts>
-
-```ts
-// This is some Typescript
-let a = 1 + 2;
-```
-
-</template>
-<template v-slot:twine>
-
-```html
-<!-- This is some Twine Sugarcube Syntax -->
-
-<< 1 + 2 >>
 ```
 
 </template>

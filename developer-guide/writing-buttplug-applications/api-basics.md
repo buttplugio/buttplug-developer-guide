@@ -29,7 +29,7 @@ Request/Response interaction between the client and the server may be a very lon
 
 For event messages, first-class events are used, where possible. Otherwise, callbacks, promises, streams, or other methods are used depending on language and library capabilities.
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', ts:'TypeScript', js:'JS', twine: 'Twine (Sugarcube)'}">
+<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', js:'Javascript'}">
 <template v-slot:rust>
 
 <<< @/examples/rust/src/bin/async.rs
@@ -46,16 +46,6 @@ For event messages, first-class events are used, where possible. Otherwise, call
 <template v-slot:js>
 
 <<< @/examples/javascript/async-example.js
-
-</template>
-<template v-slot:ts>
-
-<<< @/examples/typescript/src/async-example.ts
-
-</template>
-<template v-slot:twine>
-
-<<< @/examples/twine/async-example.twee
 
 </template>
 </CodeSwitcher>
@@ -83,7 +73,7 @@ Errors in Buttplug sessions come in the follow classes:
 
 Custom exceptions or errors may also be thrown by implementations of Buttplug. For instance, a Connector may throw a custom error or exception based on the type of transport it is using. For more information, see the documentation of the specific Buttplug implementation you are using.
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', ts:'TypeScript', js:'JS'}">
+<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', js:'Javascript'}">
 <template v-slot:rust>
 
 <<< @/examples/rust/src/bin/errors.rs
@@ -92,6 +82,11 @@ Custom exceptions or errors may also be thrown by implementations of Buttplug. F
 <template v-slot:csharp>
 
 <<< @/examples/csharp/ExceptionExample/Program.cs
+
+</template>
+<template v-slot:js>
+
+<<< @/examples/javascript/errors-example.js
 
 </template>
 </CodeSwitcher>
