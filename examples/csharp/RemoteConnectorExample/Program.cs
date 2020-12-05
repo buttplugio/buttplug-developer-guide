@@ -8,9 +8,8 @@ namespace RemoteConnectorExample
     {
         static async Task ConnectWebsocket()
         {
-            // Creating a Websocket Connector is as easy as adding the
-            // Client.Connectors.WebsocketConnector package from nuget and
-            // passing a websocket address to it.
+            // Creating a Websocket Connector is as easy as using the right
+            // options object.
             var connector = new ButtplugWebsocketConnectorOptions(
                 new Uri("ws://localhost:12345/buttplug"));
             var client = new ButtplugClient("Example Client");
