@@ -1,43 +1,60 @@
-import init, { ButtplugDeviceException, ButtplugException } from
-  "https://cdn.jsdelivr.net/npm/buttplug-wasm@1.0.0-beta3/buttplug-wasm.web/buttplug_wasm.js";
-const runErrorExample = async () => {
+// This example assumes Buttplug is brought in as a root namespace, via
+// inclusion by a script tag, i.e.
+//
+// <script lang="javascript" src="https://cdn.jsdelivr.net/npm/buttplug-wasm@1.0.0/dist/web/buttplug.js"></script>
+//
+// If you're trying to load this, change the version to the latest available.
+
+ async function runErrorExample () {
 
   async function ThrowError() {
     // All async functions in Buttplug are written to return exceptions as a
     // promise rejection, meaning they work as both promise chains and
     // async/await.
-    throw new ButtplugDeviceException("This is an exception", 0);
+    throw new ButtplugDeviceError("This is an exception", 0);
   }
 
 
   async function ButtplugErrors() {
     // In javascript, there are 2 ways we can call functions and catch exceptions.
-    await init();
+    await Buttplug.buttplugInit();
 
-    // First off, there's try/catch, which is handy for async.
+    const client = new Buttplug.ButtplugClient("Error Example Client");
+    const invalid_options = new Buttplug.ButtplugWebsocketConnectorOptions();
+    //invalid_options.Address = "this is not a websocket address";
+
+    // There's promise chain catching.
+    client
+      .connect(invalid_options)
+      .then(() => {
+        console.log("If you got here, shut down Intiface Desktop or whatever other server you're running :P");
+      })
+      .catch(e => {
+        console.log("Using .catch()");
+        console.log(e.reason);
+      });
+    // There's also try/catch, which is handy for async.
     try {
-      // Imagine some failing call here.
-      await ThrowError();
+      await client.connect(invalid_options);
     } catch (e) {
       // However, we don't have the type of the exception we get back, so it could
       // be a system exception or something else not buttplug related. If you're
       // interested in Buttplug related exceptions, it's best to check for them
       // here.
-      if (e instanceof ButtplugException) {
+      console.log(e);
+      if (e instanceof Buttplug.ButtplugError) {
+        console.log("this is a buttplug error");
         // This will make sure we're doing something specific to Buttplug.
-        if (e instanceof ButtplugDeviceException) {
+        if (e instanceof Buttplug.ButtplugClientConnectorError) {
+          console.log("This is a connector error");
           // And possibly even more specific.
         }
       }
     }
-
     // However, as all async javascript functions also return promises, so we can
     // treat the call as a promise rejection.
-    ThrowError().catch((e) => console.log("Got an exception back from our promise!"));
+    //ThrowError().catch((e) => console.log("Got an exception back from our promise!"));
   }
 
   ButtplugErrors();
 }
-document
-  .getElementById("errors-example-button")
-  .addEventListener("click", async () => await runErrorExample);

@@ -1,5 +1,9 @@
-import init, { ButtplugClient, ButtplugEmbeddedConnectorOptions } from 
-"https://cdn.jsdelivr.net/npm/buttplug-wasm@1.0.0-beta3/buttplug-wasm.web/buttplug_wasm.js";
+// This example assumes Buttplug is brought in as a root namespace, via
+// inclusion by a script tag, i.e.
+//
+// <script lang="javascript" src="https://cdn.jsdelivr.net/npm/buttplug-wasm@1.0.0/dist/web/buttplug.js"></script>
+//
+// If you're trying to load this, change the version to the latest available.
 
 // In javascript, we'll use es6 style async/await. Remember that await calls
 // return promises, so how you deal with try/catch versus .then()/.catch() is up
@@ -8,13 +12,13 @@ import init, { ButtplugClient, ButtplugEmbeddedConnectorOptions } from
 // See the "Dealing with Errors" section of the Developer Guide for more
 // info on this.
 
-export async function runAsyncExample() {
+async function runAsyncExample() {
+  console.log("Running async load example");
   // Instantiate our wasm module
-  let bp = await init();
-  const connector = new ButtplugEmbeddedConnectorOptions();
-  const client = await ButtplugClient.connect("Buttplug Example Client", connector);
+  await Buttplug.buttplugInit();
+  console.log()
+  const connector = new Buttplug.ButtplugEmbeddedConnectorOptions();
+  const client = new Buttplug.ButtplugClient("Buttplug Example Client");
+  await client.connect(connector);
+  console.log("Client connected");
 };
-
-document
-  .getElementById("async-example-button")
-  .addEventListener("click", async() => await runAsyncExample());

@@ -1,5 +1,11 @@
 <html>
   <head>
+    <style>
+      button {
+        display: block;
+        margin-bottom: 5px;
+      }
+    </style>
   </head>
   <body>
     <button id="async-example-button">Run Async Example</button>
@@ -8,12 +14,23 @@
     <button id="remote-connector-example-button">Run Websocket Connection Example</button>
     <button id="device-enumeration-example-button">Run Device Enumeration (Embedded) Example</button>
     <button id="device-control-example-button">Run Device Control (Embedded) Example</button>
-    
-    <script lang="javascript" src="async-example.js" type="module"></script>
-    <script lang="javascript" src="errors-example.js" type="module"></script>
+    <script lang="javascript" src="https://cdn.jsdelivr.net/npm/buttplug-wasm@1.0.0-beta7/dist/web/buttplug.js"></script>
+    <!-- <script lang="javascript" src="https://determined-allen-19d1dd.netlify.app/buttplug.js"></script> -->
+    <script lang="javascript" src="async-example.js"></script>
+    <script lang="javascript" src="errors-example.js"></script>
+    <!--
     <script lang="javascript" src="embedded-connector-example.js" type="module"></script>
     <script lang="javascript" src="device-control-example.js" type="module"></script>
     <script lang="javascript" src="device-enumeration-example.js" type="module"></script>
     <script lang="javascript" src="remote-connector-example.js" type="module"></script>
+    -->
+    <script lang="javascript" defer>      
+      document
+        .getElementById("async-example-button")
+        .addEventListener("click", async() => await runAsyncExample());
+      document
+        .getElementById("errors-example-button")
+        .addEventListener("click", async () => await runErrorExample());        
+    </script>
   </body>
 </html>
