@@ -18,19 +18,26 @@
     <!-- <script lang="javascript" src="https://determined-allen-19d1dd.netlify.app/buttplug.js"></script> -->
     <script lang="javascript" src="async-example.js"></script>
     <script lang="javascript" src="errors-example.js"></script>
-    <!--
-    <script lang="javascript" src="embedded-connector-example.js" type="module"></script>
-    <script lang="javascript" src="device-control-example.js" type="module"></script>
-    <script lang="javascript" src="device-enumeration-example.js" type="module"></script>
-    <script lang="javascript" src="remote-connector-example.js" type="module"></script>
-    -->
+    <script lang="javascript" src="embedded-connector-example.js"></script>
+    <script lang="javascript" src="device-control-example.js"></script>
+    <script lang="javascript" src="device-enumeration-example.js"></script>
+    <script lang="javascript" src="remote-connector-example.js"></script>
     <script lang="javascript" defer>      
       document
         .getElementById("async-example-button")
         .addEventListener("click", async() => await runAsyncExample());
       document
         .getElementById("errors-example-button")
-        .addEventListener("click", async () => await runErrorExample());        
+        .addEventListener("click", async () => await runErrorExample());
+      document
+        .getElementById("embedded-connector-example-button")
+        .addEventListener("click", async () => await runEmbeddedConnectionExample());
+      document
+        .getElementById("device-enumeration-example-button")
+        .addEventListener("click", async() => await runDeviceEnumerationExample());        
+      document
+        .getElementById("device-control-example-button")
+        .addEventListener("click", async () => await runDeviceControlExample());        
     </script>
   </body>
 </html>

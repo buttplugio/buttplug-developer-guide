@@ -35,7 +35,7 @@ This means you will want to have your event handlers set up **BEFORE** connectin
 
 Here's some examples of how device enumeration works in different implementations of Buttplug.
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#'}">
+<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', js: 'Javascript'}">
 <template v-slot:rust>
 
 <<< @/examples/rust/src/bin/device_enumeration.rs
@@ -48,9 +48,7 @@ Here's some examples of how device enumeration works in different implementation
 </template>
 <template v-slot:js>
 
-```js
-// Need to write this example
-```
+<<< @/examples/javascript/device-enumeration-example.js
 
 </template>
 </CodeSwitcher>

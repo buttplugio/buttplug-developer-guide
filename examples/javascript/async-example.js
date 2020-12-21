@@ -1,7 +1,9 @@
 // This example assumes Buttplug is brought in as a root namespace, via
 // inclusion by a script tag, i.e.
 //
-// <script lang="javascript" src="https://cdn.jsdelivr.net/npm/buttplug-wasm@1.0.0/dist/web/buttplug.js"></script>
+// <script lang="javascript" 
+//  src="https://cdn.jsdelivr.net/npm/buttplug-wasm@1.0.0/dist/web/buttplug.js">
+// </script>
 //
 // If you're trying to load this, change the version to the latest available.
 
@@ -14,7 +16,8 @@
 
 async function runAsyncExample() {
   console.log("Running async load example");
-  // Instantiate our wasm module
+  // Instantiate our wasm module. This only needs to be done once. If you did it
+  // elsewhere, ignore this.
   await Buttplug.buttplugInit();
   console.log()
   const connector = new Buttplug.ButtplugEmbeddedConnectorOptions();

@@ -1,18 +1,26 @@
-import init, { ButtplugClient,  } from
-  "https://cdn.jsdelivr.net/npm/buttplug-wasm@1.0.0-beta3/buttplug-wasm.web/buttplug_wasm.js";
+// This example assumes Buttplug is brought in as a root namespace, via
+// inclusion by a script tag, i.e.
+//
+// <script lang="javascript" 
+//  src="https://cdn.jsdelivr.net/npm/buttplug-wasm@1.0.0/dist/web/buttplug.js">
+// </script>
+//
+// If you're trying to load this, change the version to the latest available.
+
 const runWebsocketConnectionExample = async () => {
-  // Instantiate our wasm module
-  let bp = await init();
+  // Instantiate our wasm module. This only needs to be done once. If you did it
+  // elsewhere, ignore this.
+  await buttplugInit();
 
   // After you've created a connector, the connection looks the same no
   // matter what, though the errors thrown may be different.
-  let connector = new ButtplugWebsocketConnectorOptions();
+  let connector = new Buttplug.ButtplugWebsocketConnectorOptions();
 
   // This is the default insecure address for Intiface Desktop
   // (https://intiface.com/desktop). You can connect to it via Chrome, but
   // Safari/Firefox will require secure certs (covered later).
   connector.address = "ws://localhost:12345"
-  let client;
+  let client = new Buttplug.ButtplugClient("Websocket Connection Example");
 
   // Now we connect. If anything goes wrong here, we'll either throw
   //
@@ -22,7 +30,7 @@ const runWebsocketConnectionExample = async () => {
   // - A ButtplugHandshakeException if there is a client/server version
   //   mismatch.
   try {
-    client = await ButtplugClient.connect("Developer Guide Example", connector);
+    await client.connect("Developer Guide Example", connector);
   }
   catch (ex)
   {
@@ -41,6 +49,3 @@ const runWebsocketConnectionExample = async () => {
   // And now we disconnect as usual
   await client.disconnect();
 };
-document
-  .getElementById("embedded-connector-example-button")
-  .addEventListener("click", async () => await runEmbeddedConnectionExample());
