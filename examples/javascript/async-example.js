@@ -19,7 +19,7 @@ async function runAsyncExample() {
   // Instantiate our wasm module. This only needs to be done once. If you did it
   // elsewhere, ignore this.
   await Buttplug.buttplugInit();
-  console.log()
+
   const connector = new Buttplug.ButtplugEmbeddedConnectorOptions();
   const client = new Buttplug.ButtplugClient("Buttplug Example Client");
   await client.connect(connector);

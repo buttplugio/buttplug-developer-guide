@@ -16,6 +16,57 @@ Buttplug sessions (the connection lifetime between the client and server) consis
 - Application uses Device Instances to control hardware in Server
 - At some point, Application/Client disconnects from the Server
 
+## Library Initialization
+
+Depending on which programming language and/or package you're using, you may have to run some code prior to creating Buttplug instances and running commands.
+
+<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', js:'Javascript'}">
+<template v-slot:rust>
+
+If you're using Rust, congratulations, you don't really have much of anything to worry about. Isn't using the natively implemented system great?
+
+</template>
+<template v-slot:csharp>
+
+If you're using C#, we try to handle most of the initialization for you in our library. This may include detecting architectures and loading libraries to make sure that we find the correct library for the architecture you're running on. Hopefully this will be something you don't have to worry about. If you do run into problems, [file an issue on our FFI repo](https://github.com/buttplugio/buttplug-rs-ffi).
+
+</template>
+<template v-slot:js>
+
+Sorry Javascript/Typescript/Web users, unlike the other languages who don't have much to worry about, this section is mostly for you.
+
+While most of our native systems are fairly seamless, loading our WASM in web situations takes a bit of extra work.
+
+For those working on the web, here's a full HTML file example of how loading Buttplug for use works:
+
+```html
+<html>
+<head></head>
+<body>
+<script src="[buttplug CDN url here, see buttplug-js README for location/version]"></script>
+<script lang="javascript">
+  // After we've loaded the module above, we'll have a "Buttplug" global we can access 
+  // methods and classes from. We'll use that to initialize the library. This is 
+  // required because of the way we have to load our WASM code into the application. 
+  // You'll need to call buttplugInit(), which returns a promise that will resolve 
+  // when WASM is loaded, at which point you can go ahead and run other Buttplug 
+  // commands.
+  //
+  // We have this call in all of our examples in this guide, to remind users that
+  // this must happen when running the library. If you do not call this, you'll
+  // get errors in your developer console (and exceptions thrown) that will
+  // remind you that you need to do it.
+  Buttplug.buttplugInit().then(() => console.log("Buttplug Loaded"));
+</script>
+</body>
+</html>
+```
+
+If you're using **Webpack** or another web application packing system in node, things can get complicated depending on your application setup. Rather than add an example here that may need to change often, [I'm just going to refer you to the buttplug-js README about webpack setup](https://github.com/buttplugio/buttplug-rs-ffi/tree/master/js#using-buttplug-with-webpack), which will have the latest information on how to do this. If you have issues, either  [file an issue on our FFI repo](https://github.com/buttplugio/buttplug-rs-ffi) or [contact us via one of the support mechanisms (preferably discord)](intro/getting-help.html).
+
+</template>
+</CodeSwitcher>
+
 ## Client/Server Interaction
 
 There are two types of communication between the client and the server:

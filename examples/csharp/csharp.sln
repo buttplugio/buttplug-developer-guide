@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2041
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmbeddedConnectorExample", "EmbeddedConnectorExample\EmbeddedConnectorExample.csproj", "{9CAB5979-1967-4940-AE39-5B80976B86E4}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceControlExample", "DeviceControlExample\DeviceControlExample.csproj", "{92EEB153-28C8-466A-8DE8-A50B014CB36E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationExample", "ApplicationExample\ApplicationExample.csproj", "{F2CF945D-A450-46F6-9D57-A98259BE27BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingExample", "LoggingExample\LoggingExample.csproj", "{5274B798-F592-4682-BED6-9163DB5B0373}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{F2CF945D-A450-46F6-9D57-A98259BE27BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2CF945D-A450-46F6-9D57-A98259BE27BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2CF945D-A450-46F6-9D57-A98259BE27BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5274B798-F592-4682-BED6-9163DB5B0373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5274B798-F592-4682-BED6-9163DB5B0373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5274B798-F592-4682-BED6-9163DB5B0373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5274B798-F592-4682-BED6-9163DB5B0373}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

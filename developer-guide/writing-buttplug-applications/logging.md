@@ -38,9 +38,7 @@ Available log levels are as follows:
 
 Handling and/or outputting log messages in Rust is left up to the user, via normal methods of output for the [tracing crate.](https://github.com/tokio-rs/tracing) To output messages to stdout (i.e. the console) we recommend using the [tracing_subscriber](https://docs.rs/tracing-subscriber/) create with its fmt instance, like so:
 
-```rust
-// Need to write this example
-```
+<<< @/examples/rust/src/bin/logging.rs
 
 tracing_subscriber::fmt uses environment variables to set log level filters. The filters are strings set to the levels mentioned in the previous section.
 
@@ -56,19 +54,35 @@ To set this up in Powershell on windows, you can use
 $env:RUST_LOG="debug"
 ```
 
+Running the example above, you should see something like this (may not be exact. For instance, most people probably won't be writing sex toy software documentation on Christmas.):
+
+```
+Dec 25 20:49:11.826  INFO buttplug::server::comm_managers::btleplug: Setting bluetooth device event handler.
+Dec 25 20:49:11.826  INFO InProcessClientConnectorEventSenderLoop: buttplug::connector::in_process_connector: Starting In Process Client Connector Event Sender Loop
+Dec 25 20:49:11.839  INFO buttplug::server::comm_managers::serialport::serialport_comm_manager: Serial port created!
+Dec 25 20:49:11.840  INFO buttplug::server::comm_managers::lovense_dongle::lovense_hid_dongle_comm_manager: Lovense dongle HID Manager created!
+Dec 25 20:49:11.841  INFO buttplug::server::comm_managers::lovense_dongle::lovense_serial_dongle_comm_manager: Lovense dongle serial port created!
+Dec 25 20:49:11.841  INFO Lovense HID Dongle State Machine: buttplug::server::comm_managers::lovense_dongle::lovense_dongle_state_machine: Running wait for dongle step
+Dec 25 20:49:11.842  INFO Lovense Dongle State Machine: buttplug::server::comm_managers::lovense_dongle::lovense_dongle_state_machine: Running wait for dongle step
+Dec 25 20:49:11.842  INFO Client: buttplug::client: Connecting to server.
+Dec 25 20:49:11.845  INFO Client: buttplug::client: Connection to server succeeded.
+Dec 25 20:49:11.846  INFO buttplug::server::comm_managers::lovense_dongle::lovense_serial_dongle_comm_manager: Got 0 serial ports back
+Dec 25 20:49:11.847  INFO Client: buttplug::client: Running handshake with server.
+Dec 25 20:49:11.847  INFO Client:Client Loop Span: buttplug::client::internal: Starting client event loop.
+Dec 25 20:49:11.850  INFO Client:Client Loop Span:Client Event Loop: buttplug::server: Performing server handshake check
+Dec 25 20:49:11.852  INFO Client:Client Loop Span:Client Event Loop: buttplug::server: Server handshake check successful.
+Dec 25 20:49:11.854  INFO Client: buttplug::client: Connected to Buttplug Server
+```
+
 </template>
 <template v-slot:csharp>
 
-```csharp
-// Need to write this example
-```
+<<< @/examples/csharp/LoggingExample/Program.cs
 
 </template>
 <template v-slot:js>
 
-```javascript
-// Need to write this example
-```
+<<< @/examples/javascript/logging.js
 
 </template>
 </CodeSwitcher>
