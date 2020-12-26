@@ -9,7 +9,7 @@ Now that we've covered most of the basics of Buttplug, here's an example of a si
 
 While most interaction will Buttplug will usually be more complicated or context specific than this, this example ties together all of the components of the client into a simple program.
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#'}">
+<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', js:'Javascript'}">
 <template v-slot:rust>
 
 ```rust
