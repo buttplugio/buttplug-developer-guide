@@ -35,6 +35,6 @@ As a user of a Buttplug Client API, you should never be expected to send raw But
 </template>
 <template v-slot:js>
 
-<<< @/examples/javascript/device-config-example.js
+<<< @/examples/javascript/device-control-example.js
 </template>
 </CodeSwitcher>
