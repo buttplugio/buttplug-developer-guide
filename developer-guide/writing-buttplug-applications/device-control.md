@@ -22,7 +22,7 @@ You'll usually interact with devices with Device instances, which will be differ
 
 As a user of a Buttplug Client API, you should never be expected to send raw Buttplug Messages. Most Client APIs will provide message sending functions for you, usually attached to device objects or structures. If the device accepts the message type represented by the function you call, it should be sent to the device. Otherwise, you'll receive an error about message compatibility.
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#'}">
+<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', js: 'Javascript'}">
 <template v-slot:rust>
 
 <<< @/examples/rust/src/bin/device_control.rs
@@ -32,5 +32,9 @@ As a user of a Buttplug Client API, you should never be expected to send raw But
 
 <<< @/examples/csharp/DeviceControlExample/Program.cs
 
+</template>
+<template v-slot:js>
+
+<<< @/examples/javascript/device-config-example.js
 </template>
 </CodeSwitcher>
