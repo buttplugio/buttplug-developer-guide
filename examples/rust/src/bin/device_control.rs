@@ -3,9 +3,8 @@ use async_std::{
   stream::StreamExt,
 };
 use buttplug::{
-  client::{device::VibrateCommand, ButtplugClient, ButtplugClientError, ButtplugClientEvent},
+  client::{device::VibrateCommand, ButtplugClient, ButtplugClientError, ButtplugClientDeviceMessageType},
   connector::ButtplugInProcessClientConnector,
-  core::messages::ButtplugDeviceMessageType,
   test::new_bluetoothle_test_device,
 };
 
@@ -18,7 +17,8 @@ async fn main() -> anyhow::Result<()> {
   let connector = ButtplugInProcessClientConnector::default();
   let server = connector.server_ref();
   server.add_test_comm_manager()?;
-  let (client, _) = ButtplugClient::connect("Example Client", connector).await?;
+  let client = ButtplugClient::new("Example Client");
+  client.connect(connector).await?;
 
   // For this example, we'll use the Test device. This is included in Buttplug
   // Rust >= v0.1.0. It emulates how a regular device manager would work,
@@ -42,7 +42,7 @@ async fn main() -> anyhow::Result<()> {
 
   for device in client.devices() {
     println!("{} supports these messages:", device.name);
-    for (r#type, attributes) in device.allowed_messages {
+    for (r#type, attributes) in &device.allowed_messages {
       println!("- {}", r#type);
       if let Some(count) = attributes.feature_count {
         println!(" - Features: {}", count);
@@ -75,8 +75,9 @@ async fn main() -> anyhow::Result<()> {
   // know it's 2 so we don't really have to use it.
   let vibrator_count = test_client_device
     .allowed_messages
-    .get(&ButtplugDeviceMessageType::VibrateCmd)
+    .get(&ButtplugClientDeviceMessageType::VibrateCmd)
     .and_then(|attributes| attributes.feature_count);
+
   test_client_device
     .vibrate(VibrateCommand::SpeedVec(vec![1.0, 0.0]))
     .await?;

@@ -3,7 +3,7 @@ use async_std::{
   stream::StreamExt,
 };
 use buttplug::{
-  client::{ButtplugClient, ButtplugClientError, ButtplugClientEvent},
+  client::{ButtplugClient, ButtplugClientError},
   connector::ButtplugInProcessClientConnector,
   core::errors::ButtplugError,
 };
@@ -33,34 +33,33 @@ async fn main() -> anyhow::Result<()> {
   //   being up, etc.
   // - A ButtplugHandshakeError if there is a client/server version
   //   mismatch.
-  let client = ButtplugClient::connect("Example Client", connector).await;
-  let client = match client {
-    Ok(client) => client,
-    Err(ButtplugClientError::ButtplugConnectorError(error)) => {
-      // If our connection failed, because the server wasn't turned on,
-      // SSL/TLS wasn't turned off, etc, we'll just print and exit
-      // here.
-      println!("Can't connect, exiting! Message: {}", error);
-      wait_for_input().await;
-      return Ok(());
+  let client = ButtplugClient::new("Example Client");
+  if let Err(e) = client.connect(connector).await {
+    match e {
+      ButtplugClientError::ButtplugConnectorError(error) => {
+        // If our connection failed, because the server wasn't turned on,
+        // SSL/TLS wasn't turned off, etc, we'll just print and exit
+        // here.
+        println!("Can't connect, exiting! Message: {}", error);
+        wait_for_input().await;
+        return Ok(());
+      }
+      ButtplugClientError::ButtplugError(error) => match error {
+        ButtplugError::ButtplugHandshakeError(error) => {
+          // This means our client is newer than our server, and we need to
+          // upgrade the server we're connecting to.
+          println!("Handshake issue, exiting! Message: {}", error);
+          wait_for_input().await;
+          return Ok(());
+        }
+        error => {
+          println!("Unexpected error type! {}", error);
+          wait_for_input().await;
+          return Ok(());
+        }
+      }
     }
-    Err(ButtplugClientError::ButtplugError(error)) => match error {
-      ButtplugError::ButtplugHandshakeError(error) => {
-        // This means our client is newer than our server, and we need to
-        // upgrade the server we're connecting to.
-        println!("Handshake issue, exiting! Message: {}", error);
-        wait_for_input().await;
-        return Ok(());
-      }
-      error => {
-        println!("Unexpected error type! {}", error);
-        wait_for_input().await;
-        return Ok(());
-      }
-    },
   };
-
-  let (client, events) = client;
 
   // We're connected, yay!
   println!("Connected! Check Server for Client Name.");

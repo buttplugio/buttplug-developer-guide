@@ -12,7 +12,8 @@ async fn main() -> anyhow::Result<()> {
       "ws://localhost:12345/buttplug",
     ));
 
-  let (_client, _event_stream) = ButtplugClient::connect("Example Client", connector).await?;
+  let client = ButtplugClient::new("Example Client");
+  client.connect(connector).await?;
 
   Ok(())
 }

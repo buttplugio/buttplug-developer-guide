@@ -25,10 +25,12 @@ async fn main() -> anyhow::Result<()> {
   // server requires the client and server to send information back and forth,
   // so we'll await that while those (possibly somewhat slow, depending on if
   // network is being used and other factors) transfers happen.
-  let (_client, mut event_stream) = ButtplugClient::connect("Example Client", connector)
+  let client = ButtplugClient::new("Example Client");
+  client.connect(connector)
     .await
     .expect("Can't connect to Buttplug Server, exiting!");
 
+  let mut event_stream = client.event_stream();
   // As an example of event messages, we'll assume the server might
   // send the client notifications about new devices that it has found.
   // The client will let us know about this via events.

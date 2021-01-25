@@ -1,5 +1,6 @@
 use buttplug::{client::ButtplugClientError, core::errors::ButtplugError};
 
+#[allow(dead_code)]
 fn handle_error(error: ButtplugClientError) {
   match error {
     ButtplugClientError::ButtplugConnectorError(_details) => {}

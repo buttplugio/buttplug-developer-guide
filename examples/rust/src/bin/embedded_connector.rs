@@ -4,6 +4,7 @@ use buttplug::{
   server::{comm_managers::btleplug::BtlePlugCommunicationManager, ButtplugServerOptions},
 };
 
+#[allow(dead_code)]
 async fn main_the_hard_way() -> anyhow::Result<()> {
   // First off, we'll set up our Embedded Connector.
   let connector = ButtplugInProcessClientConnector::default();
@@ -12,7 +13,8 @@ async fn main_the_hard_way() -> anyhow::Result<()> {
     .server_ref()
     .add_comm_manager::<BtlePlugCommunicationManager>()?;
 
-  let _client = ButtplugClient::connect("Example Client", connector).await?;
+  let client = ButtplugClient::new("Example Client");
+  client.connect(connector).await?;
 
   Ok(())
 }
@@ -20,8 +22,8 @@ async fn main_the_hard_way() -> anyhow::Result<()> {
 #[async_std::main]
 async fn main() -> anyhow::Result<()> {
   // This is the easy way, it sets up an embedded server with everything set up automatically
-  let _client =
-    ButtplugClient::connect_in_process("Example Client", &ButtplugServerOptions::default()).await?;
+  let client = ButtplugClient::new("Example Client");
+  client.connect_in_process(&ButtplugServerOptions::default()).await?;
 
   Ok(())
 }

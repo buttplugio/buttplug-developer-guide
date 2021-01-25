@@ -1,7 +1,6 @@
 use buttplug::{
   client::ButtplugClient,
-  connector::ButtplugInProcessClientConnector,
-  server::{comm_managers::btleplug::BtlePlugCommunicationManager, ButtplugServerOptions},
+  server::ButtplugServerOptions,
 };
 use tracing_subscriber;
 
@@ -13,8 +12,8 @@ async fn main() -> anyhow::Result<()> {
   // Now when you connect here, if you've set the RUST_LOG environment variable
   // (set it to "Info" or "Debug"), you should see messages about connection
   // setup.
-  let _client =
-    ButtplugClient::connect_in_process("Example Client", &ButtplugServerOptions::default()).await?;
+  let client = ButtplugClient::new("Example Client");
+  client.connect_in_process(&ButtplugServerOptions::default()).await?;
 
   Ok(())
 }
