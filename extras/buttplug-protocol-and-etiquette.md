@@ -15,23 +15,23 @@ The computer needs to talk to the computer controlled sex toy, otherwise it woul
 
 For instance, if the computer wants to talk to a vibrator (we'll call this one Sex Toy A), the manufacturer may have made it so the computer has to say something like (> denotes messages computer sends to toy, < denotes messages toy sends to computer):
 
-> > Vibrate:50; < OK; > Vibrate:10; < OK;
+> `> Vibrate:50; < OK; > Vibrate:10; < OK;`
 
 Which means that the vibrator should run at 50% of its top speed, then later, at 10%. On each of those commands, the toy ends back a message to say "Yes that was a correctly formatted message and I am now doing the thing you said."
 
 However, another manufacturer making another vibrator (calling this one Sex Toy B) may have commands that look like:
 
-> > 5, > 1,
+> `> 5, > 1,`
 
 These commands mean basically the same thing as what we sent to the first toy. Vibrate at 50%, vibrate at 10%. We don't get back anything from these commands, we just fire them off and hope they run.
 
 If the computer were to send the commands for Sex Toy B to the Sex Toy A, it would at get back errors saying the language was incorrect:
 
-> > Vibrate:50; < OK; > 5, < ERR;
+> `> Vibrate:50; < OK; > 5, < ERR;`
 
 What happens if we send Sex Toy A commands to Sex Toy B?
 
-> > 5, > Vibrate:10;
+> `> 5, > Vibrate:10;`
 
 Sure, the toy doesn't vibrate, but now the computer doesn't know that. Only the user knows since they aren't getting vibrated, and they are probably very unhappy about that.
 
