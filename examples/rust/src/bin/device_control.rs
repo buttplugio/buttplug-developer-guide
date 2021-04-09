@@ -1,7 +1,4 @@
-use async_std::{
-  io::{stdin, ReadExt},
-  stream::StreamExt,
-};
+use tokio::io::{self, BufReader, AsyncBufReadExt};
 use buttplug::{
   client::{device::VibrateCommand, ButtplugClient, ButtplugClientError, ButtplugClientDeviceMessageType},
   connector::ButtplugInProcessClientConnector,
@@ -9,10 +6,10 @@ use buttplug::{
 };
 
 async fn wait_for_input() {
-  stdin().bytes().next().await;
+  BufReader::new(io::stdin()).lines().next_line().await.unwrap();
 }
 
-#[async_std::main]
+#[tokio::main]
 async fn main() -> anyhow::Result<()> {
   let connector = ButtplugInProcessClientConnector::default();
   let server = connector.server_ref();
@@ -77,6 +74,8 @@ async fn main() -> anyhow::Result<()> {
     .allowed_messages
     .get(&ButtplugClientDeviceMessageType::VibrateCmd)
     .and_then(|attributes| attributes.feature_count);
+
+  println!("{} has {} vibrators.", test_client_device.name, vibrator_count.unwrap_or(0));
 
   test_client_device
     .vibrate(VibrateCommand::SpeedVec(vec![1.0, 0.0]))

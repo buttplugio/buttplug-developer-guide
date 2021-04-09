@@ -1,7 +1,4 @@
-use async_std::{
-  io::{stdin, ReadExt},
-  stream::StreamExt,
-};
+use tokio::io::{self, BufReader, AsyncBufReadExt};
 use buttplug::{
   client::{ButtplugClient, ButtplugClientError},
   connector::ButtplugInProcessClientConnector,
@@ -9,10 +6,10 @@ use buttplug::{
 };
 
 async fn wait_for_input() {
-  stdin().bytes().next().await;
+  BufReader::new(io::stdin()).lines().next_line().await.unwrap();
 }
 
-#[async_std::main]
+#[tokio::main]
 async fn main() -> anyhow::Result<()> {
   // After you've created a connector, the connection looks the same no
   // matter what, though the errors thrown may be different.

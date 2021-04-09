@@ -4,7 +4,7 @@ use buttplug::{
 };
 use tracing_subscriber;
 
-#[async_std::main]
+#[tokio::main]
 async fn main() -> anyhow::Result<()> {
   // Run this to turn on the environment logger. Running this more than once will panic.
   tracing_subscriber::fmt::init();

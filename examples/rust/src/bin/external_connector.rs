@@ -4,7 +4,7 @@ use buttplug::{
   core::messages::serializer::ButtplugClientJSONSerializer,
 };
 
-#[async_std::main]
+#[tokio::main]
 async fn main() -> anyhow::Result<()> {
   // To create a Websocket Connector, you need the websocket address and some generics fuckery.
   let connector: ButtplugRemoteConnector<_, ButtplugClientJSONSerializer, _, _> =

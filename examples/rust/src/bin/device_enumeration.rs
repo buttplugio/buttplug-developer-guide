@@ -1,45 +1,42 @@
-use async_std::{
-  io::{stdin, ReadExt},
-  stream::StreamExt,
-};
+use tokio::io::{self, BufReader, AsyncBufReadExt};
+use futures::StreamExt;
 use buttplug::{
   client::{ButtplugClient, ButtplugClientEvent},
   server::ButtplugServerOptions,
 };
 
 async fn wait_for_input() {
-  stdin().bytes().next().await;
+  BufReader::new(io::stdin()).lines().next_line().await.unwrap();
 }
 
-#[async_std::main]
+#[tokio::main]
 async fn main() -> anyhow::Result<()> {
   // Usual embedded connector setup. We'll assume the server found all
   // of the subtype managers for us (the default features include all of them).
   let client = ButtplugClient::new("Example Client");
-  let events = client.event_stream();
+  let mut events = client.event_stream();
   client.connect_in_process(&ButtplugServerOptions::default()).await?;
 
-  // Set up our DeviceAdded/DeviceRemoved event handlers before connecting.
-  let events = events.inspect(|event| match event {
-    ButtplugClientEvent::DeviceAdded(device) => {
-      println!("Device {} Connected!", device.name);
+  // Set up our DeviceAdded/DeviceRemoved/ScanningFinished event handlers before connecting.
+  tokio::spawn(async move {
+    while let Some(event) = events.next().await {
+      match event {
+        ButtplugClientEvent::DeviceAdded(device) => {
+          println!("Device {} Connected!", device.name);
+        }
+        ButtplugClientEvent::DeviceRemoved(info) => {
+          println!("Device {} Removed!", info.name);
+        }
+        ButtplugClientEvent::ScanningFinished => {
+          println!("Device scanning is finished!");
+        }
+        _ => {}
+      }
     }
-    ButtplugClientEvent::DeviceRemoved(info) => {
-      println!("Device {} Removed!", info.name);
-    }
-    _ => {}
   });
 
   // We're connected, yay!
   println!("Connected!");
-
-  // Set up our scanning finished function to print whenever scanning is done.
-
-  events.for_each(|event| {
-    if let ButtplugClientEvent::ScanningFinished = event {
-      println!("Device scanning is finished!");
-    }
-  });
 
   // Now we can start scanning for devices, and any time a device is
   // found, we should see the device name printed out.

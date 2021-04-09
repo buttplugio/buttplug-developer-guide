@@ -19,7 +19,7 @@ async fn main_the_hard_way() -> anyhow::Result<()> {
   Ok(())
 }
 
-#[async_std::main]
+#[tokio::main]
 async fn main() -> anyhow::Result<()> {
   // This is the easy way, it sets up an embedded server with everything set up automatically
   let client = ButtplugClient::new("Example Client");

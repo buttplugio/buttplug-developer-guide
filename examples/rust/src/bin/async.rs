@@ -1,11 +1,11 @@
-use async_std::stream::StreamExt;
+use futures::StreamExt;
 use buttplug::{
   client::{ButtplugClient, ButtplugClientEvent},
   connector::{ButtplugRemoteClientConnector, ButtplugWebsocketClientTransport},
   core::messages::serializer::ButtplugClientJSONSerializer,
 };
 
-#[async_std::main]
+#[tokio::main]
 async fn main() -> anyhow::Result<()> {
   // In Rust, anything that will block is awaited. For instance, if we're going
   // to connect to a remote server, that might take some time due to the network
