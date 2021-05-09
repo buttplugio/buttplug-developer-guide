@@ -45,6 +45,7 @@ module.exports = {
         collapsable: true,
         children: [
           "/cookbook/intro.md",
+          "/cookbook/connector-setup-in-depth.md",
           "/cookbook/privacy-models.md",
           "/cookbook/raw-device-commands.md",
           /*
@@ -59,13 +60,10 @@ module.exports = {
         collapsable: true,
         children: [
           "/inflating-buttplug/intro.md",
-          /*
           "/inflating-buttplug/adding-device-protocols.md",
           "/inflating-buttplug/adding-device-comm-managers.md",
           "/inflating-buttplug/adding-new-messages.md",
-          "/inflating-buttplug/writing-new-clients.md",
-          "/inflating-buttplug/writing-new-servers.md",
-          */
+          "/inflating-buttplug/adding-new-ffi-implementations.md"
         ]
       },
     ],
