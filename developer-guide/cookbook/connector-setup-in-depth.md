@@ -1,6 +1,6 @@
-# Setting up Embedded Connectors
+# Connector Setup
 
-- Go over ping timeouts, device comm managers, etc.
+
 
 ## Buttplug Ping
 

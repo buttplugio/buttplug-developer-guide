@@ -51,7 +51,6 @@ module.exports = {
           /*
           "/cookbook/device-forwarders.md",
           "/cookbook/stupid-connector-tricks.md",
-          "/cookbook/privacy-models.md"
           */
         ]
       },
@@ -60,6 +59,7 @@ module.exports = {
         collapsable: true,
         children: [
           "/inflating-buttplug/intro.md",
+          "/inflating-buttplug/device-configuration-file.md",
           "/inflating-buttplug/adding-device-protocols.md",
           "/inflating-buttplug/adding-device-comm-managers.md",
           "/inflating-buttplug/adding-new-messages.md",
