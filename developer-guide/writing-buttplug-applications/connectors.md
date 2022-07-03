@@ -15,7 +15,7 @@ An Embedded server means both the client and server are part of the application 
 
 - If the libraries upgrade (which is how we usually deal with new hardware/protocol support), you'll need to upgrade your app too.
 - This may tie you to a certain platform, i.e. if you're using Windows libraries, your application might only run on windows. This all depends on the library you're using, though.
-- You'll may to set up the server yourself in your application.
+- You may need to set up the server yourself in your application.
 
 There's not really much to cover about the first two problems, they're just part of the choice you make in using this method. For now, we'll assume you'll want to set up a default Server with no Device Communication Managers, connection watchdogs, etc... We'll cover those options in the Winning Ways section.
 
