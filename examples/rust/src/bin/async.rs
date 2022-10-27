@@ -1,9 +1,9 @@
-use futures::StreamExt;
 use buttplug::{
   client::{ButtplugClient, ButtplugClientEvent},
   connector::{ButtplugRemoteClientConnector, ButtplugWebsocketClientTransport},
   core::messages::serializer::ButtplugClientJSONSerializer,
 };
+use futures::StreamExt;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -26,7 +26,8 @@ async fn main() -> anyhow::Result<()> {
   // so we'll await that while those (possibly somewhat slow, depending on if
   // network is being used and other factors) transfers happen.
   let client = ButtplugClient::new("Example Client");
-  client.connect(connector)
+  client
+    .connect(connector)
     .await
     .expect("Can't connect to Buttplug Server, exiting!");
 

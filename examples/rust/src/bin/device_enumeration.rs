@@ -1,12 +1,13 @@
-use tokio::io::{self, BufReader, AsyncBufReadExt};
+use buttplug::client::{ButtplugClient, ButtplugClientEvent};
 use futures::StreamExt;
-use buttplug::{
-  client::{ButtplugClient, ButtplugClientEvent},
-  server::ButtplugServerOptions,
-};
+use tokio::io::{self, AsyncBufReadExt, BufReader};
 
 async fn wait_for_input() {
-  BufReader::new(io::stdin()).lines().next_line().await.unwrap();
+  BufReader::new(io::stdin())
+    .lines()
+    .next_line()
+    .await
+    .unwrap();
 }
 
 #[tokio::main]
@@ -15,7 +16,7 @@ async fn main() -> anyhow::Result<()> {
   // of the subtype managers for us (the default features include all of them).
   let client = ButtplugClient::new("Example Client");
   let mut events = client.event_stream();
-  client.connect_in_process(&ButtplugServerOptions::default()).await?;
+  client.connect_in_process(None).await?;
 
   // Set up our DeviceAdded/DeviceRemoved/ScanningFinished event handlers before connecting.
   tokio::spawn(async move {

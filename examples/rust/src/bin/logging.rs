@@ -1,8 +1,4 @@
-use buttplug::{
-  client::ButtplugClient,
-  server::ButtplugServerOptions,
-};
-use tracing_subscriber;
+use buttplug::client::ButtplugClient;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -13,7 +9,7 @@ async fn main() -> anyhow::Result<()> {
   // (set it to "Info" or "Debug"), you should see messages about connection
   // setup.
   let client = ButtplugClient::new("Example Client");
-  client.connect_in_process(&ButtplugServerOptions::default()).await?;
+  client.connect_in_process(None).await?;
 
   Ok(())
 }

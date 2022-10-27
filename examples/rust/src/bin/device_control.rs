@@ -1,19 +1,33 @@
-use tokio::io::{self, BufReader, AsyncBufReadExt};
 use buttplug::{
-  client::{device::VibrateCommand, ButtplugClient, ButtplugClientError, ButtplugClientDeviceMessageType},
+  client::{
+    device::VibrateCommand,
+    ButtplugClient,
+    ButtplugClientDeviceMessageType,
+    ButtplugClientError,
+  },
   connector::ButtplugInProcessClientConnector,
-  test::new_bluetoothle_test_device,
+  server::comm_managers::test::{
+    new_bluetoothle_test_device,
+    TestDeviceCommunicationManagerBuilder,
+  },
 };
+use tokio::io::{self, AsyncBufReadExt, BufReader};
 
 async fn wait_for_input() {
-  BufReader::new(io::stdin()).lines().next_line().await.unwrap();
+  BufReader::new(io::stdin())
+    .lines()
+    .next_line()
+    .await
+    .unwrap();
 }
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
   let connector = ButtplugInProcessClientConnector::default();
   let server = connector.server_ref();
-  server.add_test_comm_manager()?;
+  server
+    .device_manager()
+    .add_comm_manager(TestDeviceCommunicationManagerBuilder::default())?;
   let client = ButtplugClient::new("Example Client");
   client.connect(connector).await?;
 
@@ -75,7 +89,11 @@ async fn main() -> anyhow::Result<()> {
     .get(&ButtplugClientDeviceMessageType::VibrateCmd)
     .and_then(|attributes| attributes.feature_count);
 
-  println!("{} has {} vibrators.", test_client_device.name, vibrator_count.unwrap_or(0));
+  println!(
+    "{} has {} vibrators.",
+    test_client_device.name,
+    vibrator_count.unwrap_or(0)
+  );
 
   test_client_device
     .vibrate(VibrateCommand::SpeedVec(vec![1.0, 0.0]))
