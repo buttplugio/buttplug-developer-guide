@@ -1,12 +1,16 @@
-use tokio::io::{self, BufReader, AsyncBufReadExt};
 use buttplug::{
   client::{ButtplugClient, ButtplugClientError},
   connector::ButtplugInProcessClientConnector,
   core::errors::ButtplugError,
 };
+use tokio::io::{self, AsyncBufReadExt, BufReader};
 
 async fn wait_for_input() {
-  BufReader::new(io::stdin()).lines().next_line().await.unwrap();
+  BufReader::new(io::stdin())
+    .lines()
+    .next_line()
+    .await
+    .unwrap();
 }
 
 #[tokio::main]
@@ -54,7 +58,7 @@ async fn main() -> anyhow::Result<()> {
           wait_for_input().await;
           return Ok(());
         }
-      }
+      },
     }
   };
 
