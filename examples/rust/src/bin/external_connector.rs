@@ -1,7 +1,9 @@
 use buttplug::{
   client::ButtplugClient,
-  connector::{ButtplugRemoteConnector, ButtplugWebsocketClientTransport},
-  core::messages::serializer::ButtplugClientJSONSerializer,
+  core::{
+    connector::{ButtplugRemoteConnector, ButtplugWebsocketClientTransport},
+    message::serializer::ButtplugClientJSONSerializer,
+  },
 };
 
 #[tokio::main]

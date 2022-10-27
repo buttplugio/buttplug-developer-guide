@@ -1,4 +1,4 @@
-use buttplug::client::{ButtplugClient, ButtplugClientEvent};
+use buttplug::{client::ButtplugClientEvent, util::in_process_client};
 use futures::StreamExt;
 use tokio::io::{self, AsyncBufReadExt, BufReader};
 
@@ -14,19 +14,18 @@ async fn wait_for_input() {
 async fn main() -> anyhow::Result<()> {
   // Usual embedded connector setup. We'll assume the server found all
   // of the subtype managers for us (the default features include all of them).
-  let client = ButtplugClient::new("Example Client");
+  let client = in_process_client("Example Client", false).await;
   let mut events = client.event_stream();
-  client.connect_in_process(None).await?;
 
   // Set up our DeviceAdded/DeviceRemoved/ScanningFinished event handlers before connecting.
   tokio::spawn(async move {
     while let Some(event) = events.next().await {
       match event {
         ButtplugClientEvent::DeviceAdded(device) => {
-          println!("Device {} Connected!", device.name);
+          println!("Device {} Connected!", device.name());
         }
         ButtplugClientEvent::DeviceRemoved(info) => {
-          println!("Device {} Removed!", info.name);
+          println!("Device {} Removed!", info.name());
         }
         ButtplugClientEvent::ScanningFinished => {
           println!("Device scanning is finished!");
@@ -54,7 +53,7 @@ async fn main() -> anyhow::Result<()> {
   // getter on the client.
   println!("Client currently knows about these devices:");
   for device in client.devices() {
-    println!("- {}", device.name);
+    println!("- {}", device.name());
   }
   wait_for_input().await;
 

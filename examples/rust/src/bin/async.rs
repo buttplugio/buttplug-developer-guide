@@ -1,7 +1,9 @@
 use buttplug::{
   client::{ButtplugClient, ButtplugClientEvent},
-  connector::{ButtplugRemoteClientConnector, ButtplugWebsocketClientTransport},
-  core::messages::serializer::ButtplugClientJSONSerializer,
+  core::{
+    connector::{ButtplugRemoteClientConnector, ButtplugWebsocketClientTransport},
+    message::serializer::ButtplugClientJSONSerializer,
+  },
 };
 use futures::StreamExt;
 
@@ -37,7 +39,7 @@ async fn main() -> anyhow::Result<()> {
   // The client will let us know about this via events.
   while let Some(event) = event_stream.next().await {
     if let ButtplugClientEvent::DeviceAdded(device) = event {
-      println!("Device {} connected", device.name);
+      println!("Device {} connected", device.name());
     }
   }
 

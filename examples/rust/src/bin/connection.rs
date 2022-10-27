@@ -1,7 +1,6 @@
 use buttplug::{
   client::{ButtplugClient, ButtplugClientError},
-  connector::ButtplugInProcessClientConnector,
-  core::errors::ButtplugError,
+  core::{connector::ButtplugInProcessClientConnectorBuilder, errors::ButtplugError},
 };
 use tokio::io::{self, AsyncBufReadExt, BufReader};
 
@@ -17,7 +16,7 @@ async fn wait_for_input() {
 async fn main() -> anyhow::Result<()> {
   // After you've created a connector, the connection looks the same no
   // matter what, though the errors thrown may be different.
-  let connector = ButtplugInProcessClientConnector::default();
+  let connector = ButtplugInProcessClientConnectorBuilder::default().finish();
 
   // If you'd like to try a remote network connection, comment the
   // connector line above and uncomment the one below. Note that you'll
