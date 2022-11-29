@@ -73,8 +73,8 @@ module.exports = {
     [
       "vuepress-plugin-matomo",
       {
-        'siteId': 9,
-        'trackerUrl': "https://matomo.nonpolynomial.com/"
+        'siteId': 4,
+        'trackerUrl': "https://nonpolynomial.matomo.cloud/"
       }
     ],
     "@vuepress/plugin-back-to-top",
