@@ -56,6 +56,11 @@ const sidebars = {
       'cookbook/privacy-models', 
       'cookbook/raw-device-commands'],
     },
+    {
+      type: 'category',
+      label: 'Inflating Buttplug',
+      items: ['inflating-buttplug/intro'],
+    },
   ],
 };
 

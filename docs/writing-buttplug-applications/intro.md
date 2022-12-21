@@ -6,7 +6,11 @@ We'll now cover the minimal amount of information needed to get you up and runni
 
 ## This Ain't Everything
 
-This section will cover the absolute minimum functionality you need to get up and running with Buttplug. However, the library is far more extensive than this section covers. It is recommended you go through this section first, get a simple program up and running with your hardware, then check out the [Winning Ways section](/cookbook/intro.html) for advice on how to structure your application and use some of the other features in the library.
+This section will cover the absolute minimum functionality you need to get up and running with
+Buttplug. However, the library is far more extensive than this section covers. It is recommended you
+go through this section first, get a simple program up and running with your hardware, then check
+out the [Winning Ways section](/cookbook/intro) for advice on how to structure your application and
+use some of the other features in the library.
 
 ## Example Code Access
 
