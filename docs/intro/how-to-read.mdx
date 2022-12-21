@@ -1,3 +1,10 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # About This Guide
 
 The Buttplug Developer Guide covers a few different topics.
@@ -10,24 +17,25 @@ This guide should be considered **a way** to do things, but not **the (only) way
 
 Chapters involving code will have interfaces similar to the one shown here. Changing the language choice on any example will change it on all examples in the project, so you can read using whatever language you're comfortable with.
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', js:'Javascript'}">
-<template v-slot:rust>
+
+<Tabs>
+<TabItem value="rust" label="Rust">
 
 ```rust
 // This is some Rust
 let a = 1 + 2;
 ```
 
-</template>
-<template v-slot:csharp>
+</TabItem>
+<TabItem value="csharp" label="C#">
 
 ```csharp
 // This is some C#
 var a = 1 + 2;
 ```
 
-</template>
-<template v-slot:js>
+</TabItem>
+<TabItem value="js" label="Javascript">
 
 ```js
 // For most of the examples in this guide, Javascript and Typescript will look mostly the
@@ -39,12 +47,12 @@ var a = 1 + 2;
 let a = 1 + 2;
 ```
 
-</template>
-</CodeSwitcher>
+</TabItem>
+</Tabs>
 
 The guide tries to cover examples for implementations in all project maintained langauges. Due to variations in programming language features, there is a good chance that while all of the examples will achieve the same goal, they may do so in very different ways. Notes about language specific requirements and implementations will be included as comments in the examples for that language.
 
-::: tip What about when you see these blocks though?
+:::tip What about when you see these blocks though?
 
 When you see callout blocks like this, it usually means there's some additional information or anecdote about the project or current subject. Not required info, so it's not in the normal paragraph flow, but things that might be nice to know.
 

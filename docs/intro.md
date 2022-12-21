@@ -1,6 +1,7 @@
 ---
 description: Front page
 slug: /
+sidebar_position: 1
 ---
 
 # Buttplug Developer Guide

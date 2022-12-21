@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Foreword
 
 A few words from the author of this guide and architect of Buttplug.

@@ -1,4 +1,8 @@
-# Introduction
+---
+sidebar_position: 1
+---
+
+# Welcome to the Buttplug Dev Guide!
 
 Welcome to the Buttplug Developer Guide, your guide to developing applications with the Buttplug Intimate Hardware Control Library.
 

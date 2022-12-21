@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Butts Are Difficult
 
 > "&#x2026; Society has put a lot of evils in our brains that we need to transcend before we make out." 
