@@ -20,12 +20,20 @@ const sidebars = {
     {
       type: 'category',
       label: 'Introduction',
-      items: ['intro/introduction', 'intro/how-to-read', 'intro/buttplug-ethics', 'intro/getting-help'],
+      items: ['intro/introduction', 
+      'intro/how-to-read', 
+      'intro/buttplug-ethics', 
+      'intro/getting-help'],
     },
     {
       type: 'category',
       label: 'Strategies Against Buttplug Architecture',
-      items: ['architecture/intro', 'architecture/sessions-and-components', 'architecture/protocol-in-depth', 'architecture/client-in-depth', 'architecture/server-in-depth', 'architecture/terms'],
+      items: ['architecture/intro', 
+      'architecture/sessions-and-components', 
+      'architecture/protocol-in-depth', 
+      'architecture/client-in-depth', 
+      'architecture/server-in-depth', 
+      'architecture/terms'],
     },
     {
       type: 'category',
@@ -39,6 +47,14 @@ const sidebars = {
       'writing-buttplug-applications/application',
       'writing-buttplug-applications/logging',
     ]
+    },
+    {
+      type: 'category',
+      label: 'Winning Ways For Your Buttplug Plays',
+      items: ['cookbook/intro', 
+      'cookbook/connector-setup-in-depth',
+      'cookbook/privacy-models', 
+      'cookbook/raw-device-commands'],
     },
   ],
 };

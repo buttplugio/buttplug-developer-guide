@@ -12,10 +12,10 @@ However, in remote application systems (for instance, a web app accessing a loca
 
 While the Buttplug API does its best to hide info, it is just a hardware access API. Connectors (websockets, IPC, etc) between clients and servers may leak info through their various mediums, depending on how they are designed.
 
-If someone needs to be completely privacy conscious, it is possible to design connectors that route through anonymizing services. See the [Inflating Buttplug]() section for more information on connector design.
+If someone needs to be completely privacy conscious, it is possible to design connectors that route through anonymizing services. See the Inflating Buttplug section for more information on connector design.
 
 ## Hiding Device Identifiers
 
 From the perspective of the Buttplug Client, identifiers that would uniquely identify the device (such as Bluetooth addresses, USB serial numbers, etc...) are not available to the Client through our core API. The client only receives as device _index_, which is a 32-bit number that is either generated per-Buttplug-session, or may be set staticly if the user decides to do so.
 
-This is not to say that information is not accessible by applications at all. It is only scoped to what the core API, minus raw device commands, allows. If a user allows an application to send [raw commands](/cookbook/raw-device-commands.md), the protocol the toy uses may relay sensitive information. For instance, the [Lovense Toy Protocol](https://stpihkal.docs.buttplug.io/hardware/lovense.html) will dump the Bluetooth Address as part of the reply to the `DeviceType;` message.
+This is not to say that information is not accessible by applications at all. It is only scoped to what the core API, minus raw device commands, allows. If a user allows an application to send [raw commands](cookbook/raw-device-commands.md), the protocol the toy uses may relay sensitive information. For instance, the [Lovense Toy Protocol](https://stpihkal.docs.buttplug.io/hardware/lovense.html) will dump the Bluetooth Address as part of the reply to the `DeviceType;` message.
