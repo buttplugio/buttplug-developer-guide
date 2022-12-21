@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Buttplug Developer Guide',
   staticDirectories: ['examples', 'static'],
-  tagline: '',
+  tagline: 'Everything you wanted to know about putting computers in your butt, but were not afraid to ask.',
   url: 'https://buttplug-developer-guide.docs.buttplug.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -71,8 +71,16 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Buttplug Developer Guide',
                 to: '/',
+              },
+              {
+                label: 'Buttplug Message Spec',
+                to: 'https://buttplug-spec.docs.buttplug.io',
+              },
+              {
+                label: 'Sex Toy Protocols I Have Known And Loved',
+                to: 'https://stpihkal.docs.buttplug.io',
               },
             ],
           },
@@ -103,6 +111,18 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/buttplugio',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/buttplugio',
+              },
+              {
+                label: 'Mastodon',
+                href: 'https://buttplug.zone/@buttplugio',
+              },
+              {
+                label: 'Youtube',
+                href: 'https://youtube.buttplug.io',
               },
             ],
           },
