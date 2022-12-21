@@ -33,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@docusaurus/preset-classic", "virtual:aa6540600ae3257d83f0822eaa2e0591b0929aced3987f560ff4d4f10c91d2f855f14098217b2075d2adee20a6a86d64b525ffb786094db42e43254ee1013dde#npm:2.2.0"],\
             ["@mdx-js/react", "virtual:aa6540600ae3257d83f0822eaa2e0591b0929aced3987f560ff4d4f10c91d2f855f14098217b2075d2adee20a6a86d64b525ffb786094db42e43254ee1013dde#npm:1.6.22"],\
             ["clsx", "npm:1.2.1"],\
+            ["docusaurus-plugin-matomo", "virtual:aa6540600ae3257d83f0822eaa2e0591b0929aced3987f560ff4d4f10c91d2f855f14098217b2075d2adee20a6a86d64b525ffb786094db42e43254ee1013dde#npm:0.0.6"],\
             ["prism-react-renderer", "virtual:aa6540600ae3257d83f0822eaa2e0591b0929aced3987f560ff4d4f10c91d2f855f14098217b2075d2adee20a6a86d64b525ffb786094db42e43254ee1013dde#npm:1.3.5"],\
             ["raw-loader", "virtual:aa6540600ae3257d83f0822eaa2e0591b0929aced3987f560ff4d4f10c91d2f855f14098217b2075d2adee20a6a86d64b525ffb786094db42e43254ee1013dde#npm:4.0.2"],\
             ["react", "npm:17.0.2"],\
@@ -5850,6 +5851,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@docusaurus/preset-classic", "virtual:aa6540600ae3257d83f0822eaa2e0591b0929aced3987f560ff4d4f10c91d2f855f14098217b2075d2adee20a6a86d64b525ffb786094db42e43254ee1013dde#npm:2.2.0"],\
             ["@mdx-js/react", "virtual:aa6540600ae3257d83f0822eaa2e0591b0929aced3987f560ff4d4f10c91d2f855f14098217b2075d2adee20a6a86d64b525ffb786094db42e43254ee1013dde#npm:1.6.22"],\
             ["clsx", "npm:1.2.1"],\
+            ["docusaurus-plugin-matomo", "virtual:aa6540600ae3257d83f0822eaa2e0591b0929aced3987f560ff4d4f10c91d2f855f14098217b2075d2adee20a6a86d64b525ffb786094db42e43254ee1013dde#npm:0.0.6"],\
             ["prism-react-renderer", "virtual:aa6540600ae3257d83f0822eaa2e0591b0929aced3987f560ff4d4f10c91d2f855f14098217b2075d2adee20a6a86d64b525ffb786094db42e43254ee1013dde#npm:1.3.5"],\
             ["raw-loader", "virtual:aa6540600ae3257d83f0822eaa2e0591b0929aced3987f560ff4d4f10c91d2f855f14098217b2075d2adee20a6a86d64b525ffb786094db42e43254ee1013dde#npm:4.0.2"],\
             ["react", "npm:17.0.2"],\
@@ -7124,6 +7126,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["dns-packet", "npm:5.4.0"],\
             ["@leichtgewicht/ip-codec", "npm:2.0.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["docusaurus-plugin-matomo", [\
+        ["npm:0.0.6", {\
+          "packageLocation": "./.yarn/cache/docusaurus-plugin-matomo-npm-0.0.6-af75f64cfa-b38488ecb2.zip/node_modules/docusaurus-plugin-matomo/",\
+          "packageDependencies": [\
+            ["docusaurus-plugin-matomo", "npm:0.0.6"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:aa6540600ae3257d83f0822eaa2e0591b0929aced3987f560ff4d4f10c91d2f855f14098217b2075d2adee20a6a86d64b525ffb786094db42e43254ee1013dde#npm:0.0.6", {\
+          "packageLocation": "./.yarn/__virtual__/docusaurus-plugin-matomo-virtual-f182616a3a/0/cache/docusaurus-plugin-matomo-npm-0.0.6-af75f64cfa-b38488ecb2.zip/node_modules/docusaurus-plugin-matomo/",\
+          "packageDependencies": [\
+            ["docusaurus-plugin-matomo", "virtual:aa6540600ae3257d83f0822eaa2e0591b0929aced3987f560ff4d4f10c91d2f855f14098217b2075d2adee20a6a86d64b525ffb786094db42e43254ee1013dde#npm:0.0.6"],\
+            ["@docusaurus/core", "virtual:aa6540600ae3257d83f0822eaa2e0591b0929aced3987f560ff4d4f10c91d2f855f14098217b2075d2adee20a6a86d64b525ffb786094db42e43254ee1013dde#npm:2.2.0"],\
+            ["@types/docusaurus__core", null]\
+          ],\
+          "packagePeers": [\
+            "@docusaurus/core",\
+            "@types/docusaurus__core"\
           ],\
           "linkType": "HARD"\
         }]\

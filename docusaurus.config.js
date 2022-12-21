@@ -27,7 +27,9 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
+  plugins: [
+    'docusaurus-plugin-matomo',
+  ],
   presets: [
     [
       'classic',
@@ -111,6 +113,12 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ['python', 'csharp', 'rust', 'powershell'],
+      },
+      matomo: {
+        matomoUrl: 'https://nonpolynomial.matomo.cloud/',
+        siteId: '4',
+        phpLoader: 'matomo.php',
+        jsLoader: 'matomo.js',
       },
     }),
 };
