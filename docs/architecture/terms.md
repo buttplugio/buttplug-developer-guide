@@ -1,4 +1,4 @@
-## Glossary
+# Glossary
 
 Just in case you don't want to go digging through the architecture section again, here's a quick list of common terms.
 

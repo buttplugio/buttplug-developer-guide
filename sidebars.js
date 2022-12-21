@@ -22,6 +22,11 @@ const sidebars = {
       label: 'Introduction',
       items: ['intro/introduction', 'intro/how-to-read', 'intro/buttplug-ethics', 'intro/getting-help'],
     },
+    {
+      type: 'category',
+      label: 'Strategies Against Buttplug Architecture',
+      items: ['architecture/intro', 'architecture/sessions-and-components', 'architecture/protocol-in-depth', 'architecture/client-in-depth', 'architecture/server-in-depth', 'architecture/terms'],
+    },
   ],
 };
 

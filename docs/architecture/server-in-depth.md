@@ -1,6 +1,6 @@
 # Server Architecture
 
-![Buttplug Server Architecture Diagram](./server.png)
+![Buttplug Server Architecture Diagram](/img/architecture/server.png)
 
 As a developer using the Buttplug library for applications, your access to Buttplug Servers is limited to some setup methods. Otherwise, most of your interaction with a server will be via the Client API. It's still good to know a bit about what the inside of the server looks like though, if only so you can understand [what's being complained about on twitter](https://twitter.com/buttplugio).
 

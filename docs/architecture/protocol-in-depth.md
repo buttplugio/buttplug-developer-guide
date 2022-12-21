@@ -2,7 +2,7 @@
 
 At the core of Buttplug is the Buttplug Protocol. This protocol is defined in the [Buttplug Spec](https://buttplug-spec.docs.buttplug.io).
 
-::: tip Why is there a protocol specification?
+:::tip Why is there a protocol specification?
 
 It may seem a little silly to go to such formal lengths for a system for controlling sex toys, and it admittedly does introduce a level of formality that isn't seen outside of larger systems like web browsers. However, this serves a couple of functions:
 
@@ -58,7 +58,7 @@ Adding new functionality to Buttplug means adding new message, so when Buttplug 
 
 Message additions are a rather complicated process. Message addition procedure is outlined in the Inflating Buttplug section, but for now, just knowing these terms is enough so you can translate what project contributors are talking about when they discuss the spec and new messages.
 
-::: tip Can Clients and Servers of different spec versions talk to each other?
+:::tip Can Clients and Servers of different spec versions talk to each other?
 
 Yes, in some cases.
 

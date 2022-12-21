@@ -4,7 +4,7 @@ In this section, we'll cover Buttplug's core protocol and architectures. Getting
 
 None of this chapter is programming language specific. While how these structures are implemented across programming languages may differ, the general idea will be the same across most systems. Any stark differences should be called out in documentation for the specific language implementations.
 
-::: tip If you don't understand this section on first read, THAT'S OK!
+:::tip If you don't understand this section on first read, THAT'S OK!
 
 This guide is written in "theory then application" order. If you're more of an application than theory learner, that's fine! Just take a quick read through here, see what you pick up, then move on to the "Writing Applications" chapter and come back to this once you've gotten your hands (or other bits) dirty.
 

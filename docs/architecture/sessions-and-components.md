@@ -1,6 +1,6 @@
 # Buttplug Sessions and Components
 
-![Buttplug Architecture Diagram](./architecture.png)
+![Buttplug Architecture Diagram](/img/architecture/architecture.png)
 
 ## Buttplug Sessions
 

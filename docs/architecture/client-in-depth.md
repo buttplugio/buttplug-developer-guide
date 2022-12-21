@@ -1,6 +1,6 @@
 # Client Architecture
 
-![Buttplug Client Architecture Diagram](./client.png)
+![Buttplug Client Architecture Diagram](/img/architecture/client.png)
 
 Applications use clients to talk to Buttplug Servers. Let's go over what each part of clients and connectors do.
 
