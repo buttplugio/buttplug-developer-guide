@@ -1,3 +1,9 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import RustLoggingExample from '!!raw-loader!/examples/rust/src/bin/logging.rs';
+
+
 # Logging
 
 Buttplug exposes a few methods to receive log messages from the internal Rust library. These messages relay the internal state of the system, and can be handy for debugging purposes.
@@ -12,7 +18,7 @@ This model may may things challenging to debug, which is why we recommend doing 
 
 Logs are generated in Rust using the [tracing crate](https://github.com/tokio-rs/tracing). This functionality is exposed to Rust via normal tracing subsystems (for instance, output to stdout via tracing_subscriber::fmt), or via various language specifics for FFIs (C# and JS have the ability to emit log messages as events).
 
-::: tip Temporary FFI Logging Limitations
+:::tip Temporary FFI Logging Limitations
 
 At the time of this writing, logging capabilties in FFI instances are somewhat limited. Logging must be started manually, can only be set to one level for a session (i.e. if logging is started a "Debug or higher" levels, it will stay there for the remainder of the process), and only comes as string. As library development progresses, this system will be tuned to allow finer grained access to control and log information.
 
@@ -33,12 +39,13 @@ Available log levels are as follows:
 
 ## Example Code
 
-<CodeSwitcher :languages="{rust:'Rust', csharp:'C#', js:'Javascript'}">
-<template v-slot:rust>
+<Tabs groupId="examples">
+<TabItem value="rust" label="Rust">
 
 Handling and/or outputting log messages in Rust is left up to the user, via normal methods of output for the [tracing crate.](https://github.com/tokio-rs/tracing) To output messages to stdout (i.e. the console) we recommend using the [tracing_subscriber](https://docs.rs/tracing-subscriber/) create with its fmt instance, like so:
 
-<<< @/examples/rust/src/bin/logging.rs
+<CodeBlock language="rust">{RustLoggingExample}</CodeBlock>
+
 
 tracing_subscriber::fmt uses environment variables to set log level filters. The filters are strings set to the levels mentioned in the previous section.
 
@@ -74,15 +81,19 @@ Dec 25 20:49:11.852  INFO Client:Client Loop Span:Client Event Loop: buttplug::s
 Dec 25 20:49:11.854  INFO Client: buttplug::client: Connected to Buttplug Server
 ```
 
-</template>
-<template v-slot:csharp>
+</TabItem>
+<TabItem value="csharp" label="C#">
 
-<<< @/examples/csharp/LoggingExample/Program.cs
+import CSharpLoggingExample from '!!raw-loader!/examples/csharp/LoggingExample/Program.cs';
 
-</template>
-<template v-slot:js>
+<CodeBlock language="csharp">{CSharpLoggingExample}</CodeBlock>
 
-<<< @/examples/javascript/logging.js
+</TabItem>
+<TabItem value="js" label="Javascript">
 
-</template>
-</CodeSwitcher>
+import jsLoggingExample from '!!raw-loader!/examples/javascript/logging.js';
+
+<CodeBlock language="js">{jsLoggingExample}</CodeBlock>
+
+</TabItem>
+</Tabs>

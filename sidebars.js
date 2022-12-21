@@ -27,6 +27,19 @@ const sidebars = {
       label: 'Strategies Against Buttplug Architecture',
       items: ['architecture/intro', 'architecture/sessions-and-components', 'architecture/protocol-in-depth', 'architecture/client-in-depth', 'architecture/server-in-depth', 'architecture/terms'],
     },
+    {
+      type: 'category',
+      label: 'Sticking Buttplug In',
+      items: ['writing-buttplug-applications/intro', 
+      'writing-buttplug-applications/api-basics',
+      'writing-buttplug-applications/connectors', 
+      'writing-buttplug-applications/connecting',
+      'writing-buttplug-applications/device-enum',
+      'writing-buttplug-applications/device-control',
+      'writing-buttplug-applications/application',
+      'writing-buttplug-applications/logging',
+    ]
+    },
   ],
 };
 
